@@ -16,9 +16,9 @@ title: Forside
     </svg>
     <div class="hero-content">
       <div class="hero-copy">
-        <div class="locale-badge on-dark" style="margin-bottom:18px;">Østfold · Akershus · Oslo</div>
         <h1>Vi skaper gode uterom</h1>
         <p>Løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter — fra grunnarbeid til ferdig grøntanlegg.</p>
+        <span class="hero-locale">Østfold · Akershus · Oslo</span>
         <a class="btn" href="/kontakt/">Be om befaring</a>
       </div>
     </div>
@@ -26,7 +26,7 @@ title: Forside
 </div>
 
 <section class="section">
-  <div class="wrap intro-grid">
+  <div class="wrap intro-grid reveal">
     <div>
       <div class="eyebrow">Om oss</div>
       <h2>Fra grunnarbeid til ferdig grøntanlegg</h2>
@@ -37,30 +37,30 @@ title: Forside
 
 <section class="section section-tint">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2>Våre tjenester</h2>
       <a class="see-all" href="/tjenester/">Se alle tjenester →</a>
     </div>
-    <div class="teaser-grid">
-      <a class="simple-card" href="/tjenester/utenomhusarbeider/">
+    <div class="teaser-grid reveal-group">
+      <a class="simple-card reveal" href="/tjenester/utenomhusarbeider/">
         <span class="num">01</span>
         <h3>Utenomhusarbeider</h3>
         <p>Hager, belegningsstein, naturstein, murer og beplantning.</p>
         <span class="arrow">Les mer →</span>
       </a>
-      <a class="simple-card" href="/tjenester/grunn-va/">
+      <a class="simple-card reveal" href="/tjenester/grunn-va/">
         <span class="num">02</span>
         <h3>Grunn- og VA-arbeider</h3>
         <p>Utgraving, planering, drenering og VA-ledninger.</p>
         <span class="arrow">Les mer →</span>
       </a>
-      <a class="simple-card" href="/tjenester/skjotsel/">
+      <a class="simple-card reveal" href="/tjenester/skjotsel/">
         <span class="num">03</span>
         <h3>Skjøtsel og vedlikehold</h3>
         <p>Løpende stell og vedlikehold av uteanlegg og grøntområder.</p>
         <span class="arrow">Les mer →</span>
       </a>
-      <a class="simple-card" href="/tjenester/riving/">
+      <a class="simple-card reveal" href="/tjenester/riving/">
         <span class="num">04</span>
         <h3>Rivearbeider</h3>
         <p>Sikker og ryddig riving av bygg og konstruksjoner.</p>
@@ -72,14 +72,14 @@ title: Forside
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2>Referanser</h2>
       <a class="see-all" href="/referanser/">Se flere prosjekter →</a>
     </div>
-    <div class="ref-grid">
+    <div class="ref-grid reveal-group">
       {% for prosjekt in collections.prosjekter %}
       {% if loop.index <= 3 %}
-      <a class="ref-card" href="{{ prosjekt.url }}">
+      <a class="ref-card reveal" href="{{ prosjekt.url }}">
         <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}">
         <span class="ref-caption">
           <span class="cat">{{ prosjekt.data.kategori }}</span>
@@ -94,7 +94,7 @@ title: Forside
 
 <section class="section-tight">
   <div class="wrap">
-    <div class="cta-band">
+    <div class="cta-band reveal">
       <div>
         <h2>Planlegger du et prosjekt?</h2>
         <p>Vi tar oppdrag i Østfold, Akershus og Oslo — send oss en henvendelse, så avtaler vi en befaring.</p>

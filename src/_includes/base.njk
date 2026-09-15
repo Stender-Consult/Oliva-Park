@@ -13,7 +13,7 @@
 
 <header class="site" id="siteHeader">
   <div class="nav-row">
-    <a class="brand" href="/">Oliva Park</a>
+    <a class="brand" href="/"><img src="/images/logo.png" alt="Oliva Park" class="brand-logo"></a>
     <nav class="links">
       <a class="nav-link" href="/">Forside</a>
       <div class="nav-item">
@@ -56,7 +56,7 @@
 
 <footer class="site">
   <div class="wrap footer-inner">
-    <span class="footer-brand">Oliva Park</span>
+    <span class="footer-brand"><img src="/images/logo.png" alt="Oliva Park" class="brand-logo"></span>
     <nav>
       <a href="/">Forside</a>
       <a href="/tjenester/">Tjenester</a>
@@ -84,6 +84,24 @@
       document.location.href = "/admin/";
     });
   }
+
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in-view'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { observer.observe(el); });
+  })();
 </script>
 </body>
 </html>

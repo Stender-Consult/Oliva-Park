@@ -92,14 +92,13 @@
     padding: 18px clamp(20px, 5vw, 56px);
   }
   .brand {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: -0.01em;
     text-decoration: none;
     color: var(--ink);
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
   }
+  .brand-logo { height: 22px; width: auto; display: block; }
   nav.links { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); }
   .nav-item { position: relative; }
   nav.links a.nav-link {
@@ -265,7 +264,16 @@
     max-width: 46ch;
     animation: heroUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
   }
-  .hero-copy .btn { margin-top: 28px; animation: heroUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+  .hero-locale {
+    display: block;
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--on-forest-soft);
+    animation: heroUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  }
+  .hero-copy .btn { margin-top: 28px; animation: heroUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
   @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.14); } }
   @keyframes heroUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @media (prefers-reduced-motion: reduce) {
@@ -640,6 +648,23 @@
   }
   .cv-contours { position: absolute; inset: 0; z-index: 1; width: 140%; height: 100%; opacity: 0.5; pointer-events: none; animation: contourDrift 40s linear infinite alternate; }
   @keyframes contourDrift { from { transform: translateX(-8%); } to { transform: translateX(0%); } }
+
+  /* ================= SCROLL REVEAL ================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-group .reveal:nth-child(1) { transition-delay: 0s; }
+  .reveal-group .reveal:nth-child(2) { transition-delay: 0.08s; }
+  .reveal-group .reveal:nth-child(3) { transition-delay: 0.16s; }
+  .reveal-group .reveal:nth-child(4) { transition-delay: 0.24s; }
+  .reveal-group .reveal:nth-child(5) { transition-delay: 0.32s; }
+  .reveal-group .reveal:nth-child(6) { transition-delay: 0.4s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
   .cv-content { position: relative; z-index: 2; }
   .cv-content .breadcrumb { color: var(--on-forest-soft); margin-bottom: clamp(20px, 4vw, 36px); }
   .cv-content .breadcrumb a { text-decoration: none; }
