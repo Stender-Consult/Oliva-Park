@@ -82,7 +82,7 @@ title: Forside
       <a class="ref-card reveal" href="{{ prosjekt.url }}">
         <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}">
         <span class="ref-caption">
-          <span class="cat">{{ prosjekt.data.kategori }}</span>
+          <span class="cat">{{ prosjekt.data.kategori | join(", ") }}</span>
           <span class="loc">{{ prosjekt.data.sted }}</span>
         </span>
       </a>

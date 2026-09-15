@@ -13,7 +13,7 @@ layout: base.njk
     </svg>
     <div class="service-hero-content">
       <div class="breadcrumb"><a href="/">Forside</a> / <a href="/referanser/">Referanser</a> / {{ tittel }}</div>
-      <span class="service-tag-num">{{ kategori }} · {{ sted }}</span>
+      <span class="service-tag-num">{{ kategori | join(", ") }} · {{ sted }}</span>
       <h1>{{ tittel }}</h1>
     </div>
   </section>
@@ -25,7 +25,7 @@ layout: base.njk
     <div class="service-gallery" style="margin-top: clamp(32px, 5vw, 48px);">
       <div class="service-gallery-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 620px;">
         {% for b in bilder %}
-        <button type="button" class="g-item" onclick="openLightbox(this)"><img src="{{ b.bilde }}" alt="{{ tittel }}"></button>
+        <button type="button" class="g-item" onclick="openLightbox(this)"><img src="{{ b }}" alt="{{ tittel }}"></button>
         {% endfor %}
       </div>
     </div>

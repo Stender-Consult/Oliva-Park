@@ -16,17 +16,21 @@ collections:
     slug: "{{slug}}"
     identifier_field: tittel
     fields:
-      - { label: "Tittel", name: "tittel", widget: "string" }
-      - { label: "Lenke (auto-generert)", name: "permalink", widget: "string", pattern: ['^/referanser/[a-z0-9-]+/$', "Må se slik ut: /referanser/navn-pa-prosjekt/"] }
-      - { label: "Kategori", name: "kategori", widget: "select", options: ["Utenomhusarbeider", "Grunn- og VA-arbeider", "Skjøtsel og vedlikehold", "Rivearbeider"] }
+      - { label: "Tittel", name: "tittel", widget: "string", hint: "Nettadressen lages automatisk ut fra tittelen." }
+      - label: "Kategori"
+        name: "kategori"
+        widget: "select"
+        multiple: true
+        min: 1
+        options: ["Utenomhusarbeider", "Grunn- og VA-arbeider", "Skjøtsel og vedlikehold", "Rivearbeider"]
       - { label: "Sted", name: "sted", widget: "select", options: ["Østfold", "Akershus", "Oslo"] }
-      - { label: "Dato", name: "dato", widget: "date" }
+      - { label: "Dato", name: "dato", widget: "datetime", time_format: false, date_format: "YYYY-MM-DD", picker_utc: true }
       - { label: "Hovedbilde", name: "bilde", widget: "image" }
       - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
       - label: "Flere bilder"
         name: "bilder"
-        widget: "list"
+        widget: "image"
+        multiple: true
         required: false
-        fields:
-          - { label: "Bilde", name: "bilde", widget: "image" }
+        hint: "Du kan velge flere bilder på én gang i opplastingsvinduet."
       - { label: "Layout (ikke endre)", name: "layout", widget: "hidden", default: "prosjekt.njk" }
