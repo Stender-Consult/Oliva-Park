@@ -42,29 +42,41 @@ title: Forside
       <a class="see-all" href="/tjenester/">Se alle tjenester →</a>
     </div>
     <div class="teaser-grid reveal-group">
-      <a class="simple-card reveal" href="/tjenester/utenomhusarbeider/">
-        <span class="num">01</span>
-        <h3>Utenomhusarbeider</h3>
-        <p>Hager, belegningsstein, naturstein, murer og beplantning.</p>
-        <span class="arrow">Les mer →</span>
+      <a class="media-card reveal" href="/tjenester/utenomhusarbeider/">
+        <span class="media-card-img"><img src="/images/utenomhusarbeider.jpg" alt="Belegningsstein legges på gårdsplass"></span>
+        <span class="media-card-body">
+          <span class="num">01</span>
+          <h3>Utenomhusarbeider</h3>
+          <p>Hager, belegningsstein, naturstein, murer og beplantning.</p>
+          <span class="arrow">Les mer →</span>
+        </span>
       </a>
-      <a class="simple-card reveal" href="/tjenester/grunn-va/">
-        <span class="num">02</span>
-        <h3>Grunn- og VA-arbeider</h3>
-        <p>Utgraving, planering, drenering og VA-ledninger.</p>
-        <span class="arrow">Les mer →</span>
+      <a class="media-card reveal" href="/tjenester/grunn-va/">
+        <span class="media-card-img"><img src="/images/grunn-va.jpg" alt="Gravemaskin i arbeid med utgraving"></span>
+        <span class="media-card-body">
+          <span class="num">02</span>
+          <h3>Grunn- og VA-arbeider</h3>
+          <p>Utgraving, planering, drenering og VA-ledninger.</p>
+          <span class="arrow">Les mer →</span>
+        </span>
       </a>
-      <a class="simple-card reveal" href="/tjenester/skjotsel/">
-        <span class="num">03</span>
-        <h3>Skjøtsel og vedlikehold</h3>
-        <p>Løpende stell og vedlikehold av uteanlegg og grøntområder.</p>
-        <span class="arrow">Les mer →</span>
+      <a class="media-card reveal" href="/tjenester/skjotsel/">
+        <span class="media-card-img"><img src="/images/skjotsel.jpg" alt="Skjøtsel av grøntanlegg"></span>
+        <span class="media-card-body">
+          <span class="num">03</span>
+          <h3>Skjøtsel og vedlikehold</h3>
+          <p>Løpende stell og vedlikehold av uteanlegg og grøntområder.</p>
+          <span class="arrow">Les mer →</span>
+        </span>
       </a>
-      <a class="simple-card reveal" href="/tjenester/riving/">
-        <span class="num">04</span>
-        <h3>Rivearbeider</h3>
-        <p>Sikker og ryddig riving av bygg og konstruksjoner.</p>
-        <span class="arrow">Les mer →</span>
+      <a class="media-card reveal" href="/tjenester/riving/">
+        <span class="media-card-img"><img src="/images/riving.jpg" alt="Riving av eksisterende konstruksjon"></span>
+        <span class="media-card-body">
+          <span class="num">04</span>
+          <h3>Rivearbeider</h3>
+          <p>Sikker og ryddig riving av bygg og konstruksjoner.</p>
+          <span class="arrow">Les mer →</span>
+        </span>
       </a>
     </div>
   </div>
@@ -80,7 +92,7 @@ title: Forside
       {% for prosjekt in collections.prosjekter %}
       {% if loop.index <= 3 %}
       <a class="ref-card reveal" href="{{ prosjekt.url }}">
-        <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}">
+        <span class="ref-card-media"><img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}"></span>
         <span class="ref-caption">
           <span class="cat">{{ prosjekt.data.kategori | join(", ") }}</span>
           <span class="title">{{ prosjekt.data.tittel }}</span>

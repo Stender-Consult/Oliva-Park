@@ -401,14 +401,28 @@
 
   /* ================= REFERANSER (prosjektgalleri) ================= */
   .ref-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-  .ref-card { position: relative; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4/3; display: block; border: 0; padding: 0; cursor: zoom-in; background: none; width: 100%; }
+  .ref-card {
+    position: relative;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    padding: 0;
+    cursor: pointer;
+    background: var(--paper);
+    width: 100%;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .ref-card:hover, .ref-card:focus-visible { box-shadow: 0 10px 26px rgba(29,34,20,0.14); transform: translateY(-2px); }
+  .ref-card-media { position: relative; aspect-ratio: 4/3; overflow: hidden; }
   .ref-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .ref-card:hover img, .ref-card:focus-visible img { transform: scale(1.06); }
-  .ref-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,26,17,0.75) 0%, rgba(20,26,17,0) 45%); }
-  .ref-caption { position: absolute; left: 16px; right: 16px; bottom: 12px; z-index: 1; text-align: left; }
-  .ref-caption .cat { font-family: var(--mono); font-size: 0.72rem; color: var(--orange); text-transform: uppercase; letter-spacing: 0.06em; }
-  .ref-caption .title { display: block; margin-top: 4px; color: var(--on-forest); font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
-  .ref-caption .loc { display: block; margin-top: 3px; color: var(--on-forest-soft); font-weight: 500; font-size: 0.86rem; }
+  .ref-caption { position: relative; z-index: 1; text-align: left; padding: 14px 16px 16px; }
+  .ref-caption .cat { display: block; font-family: var(--mono); font-size: 0.7rem; color: var(--orange-deep); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.4; }
+  .ref-caption .title { display: block; margin-top: 6px; color: var(--ink); font-weight: 700; font-size: 1.1rem; line-height: 1.25; }
+  .ref-caption .loc { display: block; margin-top: 4px; color: var(--ink-soft); font-weight: 500; font-size: 0.86rem; }
   @media (max-width: 880px) { .ref-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 560px) { .ref-grid { grid-template-columns: 1fr; } }
 
@@ -484,6 +498,29 @@
   .simple-card p { font-size: 0.92rem; color: var(--ink-soft); flex-grow: 1; }
   .simple-card .arrow { font-size: 0.85rem; font-weight: 600; color: var(--moss); }
   .simple-card:hover .arrow, .simple-card:focus-visible .arrow { color: var(--orange); }
+
+  /* ================= MEDIA CARD (tjenester m/bilde, forside) ================= */
+  .media-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    background: var(--paper);
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .media-card:hover, .media-card:focus-visible { border-color: var(--orange); transform: translateY(-2px); box-shadow: 0 14px 30px -16px rgba(20,26,17,0.4); }
+  .media-card-img { display: block; aspect-ratio: 4/3; overflow: hidden; }
+  .media-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .media-card:hover .media-card-img img, .media-card:focus-visible .media-card-img img { transform: scale(1.06); }
+  .media-card-body { display: flex; flex-direction: column; gap: 8px; padding: clamp(18px, 2.4vw, 22px); flex-grow: 1; }
+  .media-card-body .num { font-family: var(--mono); font-weight: 600; font-size: 0.76rem; color: var(--orange-deep); letter-spacing: 0.03em; }
+  .media-card-body h3 { font-size: 1.08rem; font-weight: 650; }
+  .media-card-body p { font-size: 0.9rem; color: var(--ink-soft); flex-grow: 1; }
+  .media-card-body .arrow { font-size: 0.85rem; font-weight: 600; color: var(--moss); }
+  .media-card:hover .arrow, .media-card:focus-visible .arrow { color: var(--orange); }
 
   .simple-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .simple-card-lg { min-height: 220px; padding: clamp(28px, 3.5vw, 36px); }

@@ -14,7 +14,7 @@ permalink: /referanser/
   <div class="wrap ref-grid">
     {% for prosjekt in collections.prosjekter %}
     <a class="ref-card" href="{{ prosjekt.url }}">
-      <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}">
+      <span class="ref-card-media"><img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}"></span>
       <span class="ref-caption">
         <span class="cat">{{ prosjekt.data.kategori | join(", ") }}</span>
         <span class="title">{{ prosjekt.data.tittel }}</span>
