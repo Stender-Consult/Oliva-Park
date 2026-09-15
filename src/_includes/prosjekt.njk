@@ -1,0 +1,60 @@
+---
+layout: base.njk
+---
+<div class="wrap">
+  <section class="service-hero">
+    <div class="hero-bg"><img src="{{ bilde }}" alt="{{ tittel }}"></div>
+    <svg class="hero-contours" viewBox="0 0 1200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#fffdf8" stroke-width="1.1">
+        <path d="M-40,120 C 200,60 340,170 560,100 S 980,60 1240,140" opacity="0.5"/>
+        <path d="M-40,190 C 220,140 380,240 600,170 S 960,130 1240,210" opacity="0.42"/>
+        <path d="M-40,260 C 240,220 420,310 640,240 S 940,210 1240,280" opacity="0.34"/>
+      </g>
+    </svg>
+    <div class="service-hero-content">
+      <div class="breadcrumb"><a href="/">Forside</a> / <a href="/referanser/">Referanser</a> / {{ tittel }}</div>
+      <span class="service-tag-num">{{ kategori }} · {{ sted }}</span>
+      <h1>{{ tittel }}</h1>
+    </div>
+  </section>
+</div>
+<section class="section">
+  <div class="wrap">
+    <p style="color: var(--ink-soft); font-size: 1.08rem; max-width: 62ch;">{{ beskrivelse }}</p>
+    {% if bilder %}
+    <div class="service-gallery" style="margin-top: clamp(32px, 5vw, 48px);">
+      <div class="service-gallery-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 620px;">
+        {% for b in bilder %}
+        <button type="button" class="g-item" onclick="openLightbox(this)"><img src="{{ b.bilde }}" alt="{{ tittel }}"></button>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="wrap">
+    <div class="other-services">
+      <div class="label">Andre prosjekter</div>
+      <div class="other-links">
+        {% for p in collections.prosjekter %}
+        {% if p.data.tittel != tittel %}
+        <a href="{{ p.url }}">{{ p.data.tittel }}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Lukk">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+  function openLightbox(btn) {
+    var img = btn.querySelector('img');
+    if (!img) return;
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+</script>

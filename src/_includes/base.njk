@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — Oliva Park</title>
+<meta name="description" content="{{ description or 'Anleggsgartner i Østfold, Akershus og Oslo. Utenomhusarbeider, grunn- og VA-arbeider, skjøtsel og vedlikehold, rivearbeider.' }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="nav-row">
+    <a class="brand" href="/">Oliva Park</a>
+    <nav class="links">
+      <a class="nav-link" href="/">Forside</a>
+      <div class="nav-item">
+        <a class="nav-link" href="/tjenester/">Tjenester <span class="caret"></span></a>
+        <div class="dropdown">
+          <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
+          <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
+          <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
+          <a href="/tjenester/riving/">Rivearbeider</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/referanser/">Referanser</a>
+      <a class="nav-link" href="/om-oss/">Om oss</a>
+      <a class="nav-link" href="/kontakt/">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="/kontakt/">Be om befaring</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Åpne meny" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Forside</a>
+    <a href="/tjenester/">Tjenester</a>
+    <div class="mobile-sub">
+      <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
+      <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
+      <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
+      <a href="/tjenester/riving/">Rivearbeider</a>
+    </div>
+    <a href="/referanser/">Referanser</a>
+    <a href="/om-oss/">Om oss</a>
+    <a href="/kontakt/">Kontakt</a>
+    <a class="btn mobile-cta" href="/kontakt/">Be om befaring</a>
+  </div>
+</header>
+
+<main id="app">
+{{ content | safe }}
+</main>
+
+<footer class="site">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">Oliva Park</span>
+    <nav>
+      <a href="/">Forside</a>
+      <a href="/tjenester/">Tjenester</a>
+      <a href="/referanser/">Referanser</a>
+      <a href="/om-oss/">Om oss</a>
+      <a href="/kontakt/">Kontakt</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">© Oliva Park &middot; Utenomhusarbeider, grunn- og VA-arbeider, skjøtsel og vedlikehold, rivearbeider &middot; Østfold, Akershus og Oslo</div>
+</footer>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: Kontakt
+permalink: /kontakt/
+---
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Forside</a> / Kontakt</div>
+    <h1>Kontakt</h1>
+    <p class="lede">Send oss en e-post eller ring, så avtaler vi en befaring.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap contact-layout">
+    <div class="intro">
+      <h2>Fortell oss om prosjektet</h2>
+      <p>Send noen ord om hva som skal gjøres og hvor, så tar vi kontakt for å avtale befaring.</p>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="cf-name">Navn</label>
+          <input type="text" id="cf-name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">E-post</label>
+          <input type="email" id="cf-email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Melding</label>
+          <textarea id="cf-message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send via e-post →</button>
+      </form>
+    </div>
+    <div class="contact-details">
+      <div>
+        <span class="contact-label">E-post</span>
+        <a class="contact-value" href="mailto:post@oliva-park.no">post@oliva-park.no</a>
+      </div>
+      <div>
+        <span class="contact-label">Telefon</span>
+        <span class="contact-value">[Legg til telefonnummer]</span>
+      </div>
+      <div>
+        <span class="contact-label">Område</span>
+        <span class="contact-value">Østfold, Akershus og Oslo</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = this.name.value.trim();
+    var email = this.email.value.trim();
+    var message = this.message.value.trim();
+    var body = 'Navn: ' + name + '\nE-post: ' + email + '\n\n' + message;
+    window.location.href = 'mailto:post@oliva-park.no?subject=' + encodeURIComponent('Henvendelse fra nettsiden') + '&body=' + encodeURIComponent(body);
+  });
+</script>

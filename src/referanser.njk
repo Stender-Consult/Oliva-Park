@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Referanser
+permalink: /referanser/
+---
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Forside</a> / Referanser</div>
+    <h1>Referanser</h1>
+    <p class="lede">Et utvalg av prosjekter vi har gjennomført for private, næringskunder, borettslag og offentlige oppdragsgivere i Østfold, Akershus og Oslo.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap ref-grid">
+    {% for prosjekt in collections.prosjekter %}
+    <a class="ref-card" href="{{ prosjekt.url }}">
+      <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}">
+      <span class="ref-caption">
+        <span class="cat">{{ prosjekt.data.kategori }}</span>
+        <span class="loc">{{ prosjekt.data.sted }}</span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>

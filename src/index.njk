@@ -1,0 +1,105 @@
+---
+layout: base.njk
+title: Forside
+---
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/hero-uteanlegg.jpg" alt="Ferdig opparbeidet uteareal med grøntanlegg og lekeplass, sett ovenfra" loading="eager">
+    </div>
+    <svg class="hero-contours" viewBox="0 0 1200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#fffdf8" stroke-width="1.1">
+        <path d="M-40,120 C 200,60 340,170 560,100 S 980,60 1240,140" opacity="0.5"/>
+        <path d="M-40,190 C 220,140 380,240 600,170 S 960,130 1240,210" opacity="0.42"/>
+        <path d="M-40,260 C 240,220 420,310 640,240 S 940,210 1240,280" opacity="0.34"/>
+      </g>
+    </svg>
+    <div class="hero-content">
+      <div class="hero-copy">
+        <div class="locale-badge on-dark" style="margin-bottom:18px;">Østfold · Akershus · Oslo</div>
+        <h1>Vi skaper gode uterom</h1>
+        <p>Løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter — fra grunnarbeid til ferdig grøntanlegg.</p>
+        <a class="btn" href="/kontakt/">Be om befaring</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="section">
+  <div class="wrap intro-grid">
+    <div>
+      <div class="eyebrow">Om oss</div>
+      <h2>Fra grunnarbeid til ferdig grøntanlegg</h2>
+    </div>
+    <p>Med kompetanse og arbeidskapasitet innen både grunnarbeid og parkarbeid kan vi følge prosjektet hele veien fra grunn til ferdig uterom. Det gir god flyt, færre grensesnitt og kontroll på kvaliteten gjennom hele prosjektet.</p>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Våre tjenester</h2>
+      <a class="see-all" href="/tjenester/">Se alle tjenester →</a>
+    </div>
+    <div class="teaser-grid">
+      <a class="simple-card" href="/tjenester/utenomhusarbeider/">
+        <span class="num">01</span>
+        <h3>Utenomhusarbeider</h3>
+        <p>Hager, belegningsstein, naturstein, murer og beplantning.</p>
+        <span class="arrow">Les mer →</span>
+      </a>
+      <a class="simple-card" href="/tjenester/grunn-va/">
+        <span class="num">02</span>
+        <h3>Grunn- og VA-arbeider</h3>
+        <p>Utgraving, planering, drenering og VA-ledninger.</p>
+        <span class="arrow">Les mer →</span>
+      </a>
+      <a class="simple-card" href="/tjenester/skjotsel/">
+        <span class="num">03</span>
+        <h3>Skjøtsel og vedlikehold</h3>
+        <p>Løpende stell og vedlikehold av uteanlegg og grøntområder.</p>
+        <span class="arrow">Les mer →</span>
+      </a>
+      <a class="simple-card" href="/tjenester/riving/">
+        <span class="num">04</span>
+        <h3>Rivearbeider</h3>
+        <p>Sikker og ryddig riving av bygg og konstruksjoner.</p>
+        <span class="arrow">Les mer →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Referanser</h2>
+      <a class="see-all" href="/referanser/">Se flere prosjekter →</a>
+    </div>
+    <div class="ref-grid">
+      {% for prosjekt in collections.prosjekter %}
+      {% if loop.index <= 3 %}
+      <a class="ref-card" href="{{ prosjekt.url }}">
+        <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}">
+        <span class="ref-caption">
+          <span class="cat">{{ prosjekt.data.kategori }}</span>
+          <span class="loc">{{ prosjekt.data.sted }}</span>
+        </span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Planlegger du et prosjekt?</h2>
+        <p>Vi tar oppdrag i Østfold, Akershus og Oslo — send oss en henvendelse, så avtaler vi en befaring.</p>
+      </div>
+      <a class="btn" href="/kontakt/">Ta kontakt</a>
+    </div>
+  </div>
+</section>

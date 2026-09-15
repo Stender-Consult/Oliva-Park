@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+site_url: https://oliva-park.no
+
+collections:
+  - name: "prosjekter"
+    label: "Referanser (prosjekter)"
+    label_singular: "Prosjekt"
+    folder: "src/prosjekter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: tittel
+    fields:
+      - { label: "Tittel", name: "tittel", widget: "string" }
+      - { label: "Lenke (auto-generert)", name: "permalink", widget: "string", pattern: ['^/referanser/[a-z0-9-]+/$', "Må se slik ut: /referanser/navn-pa-prosjekt/"] }
+      - { label: "Kategori", name: "kategori", widget: "select", options: ["Utenomhusarbeider", "Grunn- og VA-arbeider", "Skjøtsel og vedlikehold", "Rivearbeider"] }
+      - { label: "Sted", name: "sted", widget: "select", options: ["Østfold", "Akershus", "Oslo"] }
+      - { label: "Dato", name: "dato", widget: "date" }
+      - { label: "Hovedbilde", name: "bilde", widget: "image" }
+      - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+      - label: "Flere bilder"
+        name: "bilder"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Bilde", name: "bilde", widget: "image" }
+      - { label: "Layout (ikke endre)", name: "layout", widget: "hidden", default: "prosjekt.njk" }
