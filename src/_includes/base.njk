@@ -80,17 +80,9 @@
   }
 
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", function (user) {
-      if (!user) {
-        window.netlifyIdentity.on("login", function () {
-          document.location.href = "/admin/";
-        });
-      }
+    window.netlifyIdentity.on("login", function () {
+      document.location.href = "/admin/";
     });
-    // Fanger opp invitasjon/passord-lenker (recovery_token, invite_token osv.) uansett hvilken side de havner på
-    if (window.location.hash && window.location.hash.match(/(confirmation_token|invite_token|recovery_token|email_change_token)=/)) {
-      window.netlifyIdentity.open();
-    }
   }
 </script>
 </body>
