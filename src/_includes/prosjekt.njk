@@ -46,15 +46,38 @@ layout: base.njk
 </section>
 <div class="lightbox" id="lightbox">
   <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Lukk">&times;</button>
+  <button type="button" class="lightbox-nav lightbox-prev" onclick="stepLightbox(-1)" aria-label="Forrige bilde">&#8249;</button>
   <img id="lightbox-img" src="" alt="">
+  <button type="button" class="lightbox-nav lightbox-next" onclick="stepLightbox(1)" aria-label="Neste bilde">&#8250;</button>
 </div>
 <script>
+  var galleryImages = Array.prototype.map.call(document.querySelectorAll('.g-item img'), function (img) {
+    return { src: img.src, alt: img.alt };
+  });
+  var lightboxIndex = 0;
+
+  function showLightboxImage(index) {
+    if (!galleryImages.length) return;
+    lightboxIndex = (index + galleryImages.length) % galleryImages.length;
+    var current = galleryImages[lightboxIndex];
+    document.getElementById('lightbox-img').src = current.src;
+    document.getElementById('lightbox-img').alt = current.alt;
+  }
+
   function openLightbox(btn) {
     var img = btn.querySelector('img');
     if (!img) return;
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox-img').alt = img.alt;
+    var index = galleryImages.findIndex(function (g) { return g.src === img.src; });
+    showLightboxImage(index === -1 ? 0 : index);
     document.getElementById('lightbox').classList.add('open');
   }
   function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+  function stepLightbox(dir) { showLightboxImage(lightboxIndex + dir); }
+
+  document.addEventListener('keydown', function (e) {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') stepLightbox(-1);
+    if (e.key === 'ArrowRight') stepLightbox(1);
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
