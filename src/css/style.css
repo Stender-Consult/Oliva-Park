@@ -294,6 +294,47 @@
   }
   .btn:hover, .btn:focus-visible { background: var(--orange-deep); }
 
+  /* ================= KONTAKT (enkel side) ================= */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(32px, 6vw, 64px);
+    align-items: start;
+  }
+  .contact-layout .intro h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 650; }
+  .contact-layout .intro > p { margin-top: 10px; color: var(--ink-soft); font-size: 1.02rem; max-width: 52ch; }
+  .contact-form { margin-top: clamp(24px, 4vw, 32px); display: flex; flex-direction: column; gap: 18px; width: 100%; }
+  .contact-form .form-row { display: flex; flex-direction: column; gap: 6px; }
+  .contact-form label {
+    font-family: var(--mono); font-size: 0.76rem; color: var(--moss);
+    text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+  }
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 1rem;
+    padding: 13px 15px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    background: var(--sand);
+    color: var(--ink);
+    box-sizing: border-box;
+  }
+  .contact-form textarea { resize: vertical; min-height: 130px; }
+  .contact-form input:focus, .contact-form textarea:focus {
+    outline: none; border-color: var(--moss); box-shadow: 0 0 0 3px color-mix(in srgb, var(--moss) 20%, transparent);
+  }
+  .contact-form .btn { align-self: flex-start; border: none; font-family: var(--sans); cursor: pointer; }
+  .contact-details { display: flex; flex-direction: column; gap: 20px; padding-top: clamp(8px, 2vw, 12px); }
+  .contact-details > div { display: flex; flex-direction: column; gap: 4px; }
+  .contact-label { font-family: var(--mono); font-size: 0.76rem; color: var(--moss); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .contact-value { display: block; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .contact-value:hover { color: var(--moss); }
+  @media (max-width: 780px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-details { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 20px; }
+  }
+
   /* ================= PAGE HERO (undersider) ================= */
   .page-hero { background: var(--tint); padding: clamp(40px, 7vw, 60px) 0 clamp(32px, 5vw, 44px); }
   .breadcrumb { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.01em; color: var(--ink-soft); text-transform: uppercase; }
