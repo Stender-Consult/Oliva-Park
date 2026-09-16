@@ -181,9 +181,9 @@
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--paper);
+    border-radius: 0;
+    border: none;
+    background: transparent;
     cursor: pointer;
   }
   .nav-toggle .bar {
@@ -192,7 +192,7 @@
     right: 10px;
     height: 2px;
     border-radius: 2px;
-    background: var(--ink);
+    background: var(--on-forest);
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
   .nav-toggle .bar:nth-child(1) { top: 14px; }
