@@ -1,25 +1,31 @@
 
   :root {
-    --forest: #31410d;
-    --forest-2: #202b09;
-    --forest-3: #4a5d16;
-    --moss: #6e883f;
-    --orange: #dc7000;
-    --orange-deep: #b25900;
-    --orange-tint: #f6e2c8;
+    --forest: #3c4a24;
+    --forest-2: #2b361a;
+    --forest-3: #5c7538;
+    --moss: #799f5e;
+    --orange: #d9a22a;
+    --orange-deep: #b3811a;
+    --orange-tint: #f6e8c6;
+    --sky: #7dbcd6;
+    --sky-deep: #5fa0bc;
+    --sky-tint: #e2f0f5;
+    --coral: #d98384;
+    --coral-deep: #c16768;
+    --coral-tint: #f7e2e0;
     --paper: #ffffff;
-    --stone: #dfdfd4;
+    --stone: #eef0e6;
     --sand: #eef1df;
     --park-tint: #b7cca3;
-    --tint: #d3d6c3;
-    --tint-2: #c1c6ab;
+    --tint: #dfe3d1;
+    --tint-2: #c9cfb4;
     --ink: #1b1e1c;
     --ink-soft: #565c4e;
-    --line: #cdccbb;
+    --line: #d6d9c8;
     --on-forest: #f7f7ee;
     --on-forest-soft: #c9d3ac;
-    --lime: #d8e26a;
-    --lime-deep: #bfc94a;
+    --lime: #f0c94a;
+    --lime-deep: #d9ac2c;
     --display: "Archivo", "Segoe UI", system-ui, sans-serif;
     --sans: "Public Sans", "Segoe UI", system-ui, sans-serif;
     --mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
@@ -402,6 +408,9 @@
   .section { padding: clamp(56px, 9vw, 92px) 0; }
   .section-tight { padding: clamp(40px, 6vw, 64px) 0; }
   .section-tint { background: var(--tint); }
+  .section-sky { background: var(--sky); }
+  .section-sky .eyebrow { color: var(--forest); }
+  .section-sky .eyebrow::before { background: var(--forest); }
   .section-head {
     display: flex;
     justify-content: space-between;
@@ -454,7 +463,7 @@
   .ref-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .ref-card:hover img, .ref-card:focus-visible img { transform: scale(1.06); }
   .ref-caption { position: relative; z-index: 1; text-align: left; padding: 14px 16px 16px; }
-  .ref-caption .cat { display: block; font-family: var(--mono); font-size: 0.7rem; color: var(--orange-deep); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.4; }
+  .ref-caption .cat { display: block; font-family: var(--mono); font-size: 0.7rem; color: var(--coral-deep); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.4; }
   .ref-caption .title { display: block; margin-top: 6px; color: var(--ink); font-weight: 700; font-size: 1.1rem; line-height: 1.25; }
   .ref-caption .loc { display: block; margin-top: 4px; color: var(--ink-soft); font-weight: 500; font-size: 0.86rem; }
   @media (max-width: 880px) { .ref-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
