@@ -15,20 +15,25 @@ permalink: /kontakt/
     <div class="intro">
       <h2>Fortell oss om prosjektet</h2>
       <p>Send noen ord om hva som skal gjøres og hvor, så tar vi kontakt for å avtale befaring.</p>
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" novalidate>
         <div class="form-row">
           <label for="cf-name">Navn</label>
-          <input type="text" id="cf-name" name="name" required>
+          <input type="text" id="cf-name" name="name" autocomplete="name" required aria-describedby="err-name">
+          <span class="form-error" id="err-name" hidden>Skriv inn navnet ditt.</span>
         </div>
         <div class="form-row">
           <label for="cf-email">E-post</label>
-          <input type="email" id="cf-email" name="email" required>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required aria-describedby="err-email">
+          <span class="form-error" id="err-email" hidden>Skriv inn en gyldig e-postadresse.</span>
         </div>
         <div class="form-row">
           <label for="cf-message">Melding</label>
-          <textarea id="cf-message" name="message" required></textarea>
+          <textarea id="cf-message" name="message" required aria-describedby="hint-message err-message"></textarea>
+          <span class="form-hint" id="hint-message">Hva skal gjøres, hvor, og når passer det?</span>
+          <span class="form-error" id="err-message" hidden>Skriv noen ord om prosjektet.</span>
         </div>
-        <button type="submit" class="btn">Send via e-post →</button>
+        <button type="submit" class="btn">Send via e-post</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
     <div class="contact-details">
@@ -48,12 +53,52 @@ permalink: /kontakt/
   </div>
 </section>
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = this.name.value.trim();
-    var email = this.email.value.trim();
-    var message = this.message.value.trim();
-    var body = 'Navn: ' + name + '\nE-post: ' + email + '\n\n' + message;
-    window.location.href = 'mailto:post@oliva-park.no?subject=' + encodeURIComponent('Henvendelse fra nettsiden') + '&body=' + encodeURIComponent(body);
-  });
+  (function () {
+    var form = document.getElementById('contactForm');
+    var status = document.getElementById('formStatus');
+    if (!form) return;
+
+    var fields = [
+      { input: form.name, error: document.getElementById('err-name'), valid: function (v) { return v.length > 0; } },
+      { input: form.email, error: document.getElementById('err-email'), valid: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); } },
+      { input: form.message, error: document.getElementById('err-message'), valid: function (v) { return v.length > 0; } }
+    ];
+
+    function check(field, showError) {
+      var ok = field.valid(field.input.value.trim());
+      field.input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      field.error.hidden = ok || !showError;
+      field.input.classList.toggle('is-invalid', !ok && showError);
+      return ok;
+    }
+
+    fields.forEach(function (field) {
+      field.input.addEventListener('blur', function () { check(field, true); });
+      field.input.addEventListener('input', function () {
+        if (field.input.classList.contains('is-invalid')) check(field, true);
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var results = fields.map(function (f) { return check(f, true); });
+      var allOk = results.indexOf(false) === -1;
+
+      if (!allOk) {
+        status.hidden = false;
+        status.className = 'form-status is-error';
+        status.textContent = 'Fyll ut feltene som er merket, så sender vi deg videre til e-post.';
+        for (var i = 0; i < fields.length; i++) {
+          if (fields[i].input.classList.contains('is-invalid')) { fields[i].input.focus(); break; }
+        }
+        return;
+      }
+
+      var body = 'Navn: ' + form.name.value.trim() + '\nE-post: ' + form.email.value.trim() + '\n\n' + form.message.value.trim();
+      status.hidden = false;
+      status.className = 'form-status is-ok';
+      status.textContent = 'Åpner e-postprogrammet ditt med meldingen klar. Får du ikke opp noe, send til post@oliva-park.no.';
+      window.location.href = 'mailto:post@oliva-park.no?subject=' + encodeURIComponent('Henvendelse fra nettsiden') + '&body=' + encodeURIComponent(body);
+    });
+  })();
 </script>

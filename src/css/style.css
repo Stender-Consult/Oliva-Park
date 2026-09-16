@@ -29,9 +29,19 @@
   --blossom: #f2cbbd;
   --blossom-soft: #f8e2da;
 
-  /* Oransje - handlingsfarge */
+  /* Oransje - handlingsfarge.
+     --orange er kun fyllfarge (knapper) og brukes med morkt blekk som tekst: 5.25:1.
+     --orange-text er tekstvarianten for lenker pa lys bakgrunn: 5.29:1 mot beige. */
   --orange: #e0722a;
-  --orange-deep: #c25c1c;
+  --orange-hover: #cf661f;
+  --orange-text: #9e5323;
+  --orange-deep: #9e5323;
+
+  /* Systemfarger: feilfargen er en dyp variant av terrakotta, ikke generisk rod.
+     8.2:1 mot hvit, bestar AA med god margin. */
+  --error: #8f2f21;
+  --error-bg: #fbeae6;
+  --error-ring: rgba(143, 47, 33, 0.16);
 
   /* Noytraler */
   --bone: #faf7f1;
@@ -327,8 +337,8 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
 .btn {
   display: inline-block;
   padding: 13px 26px;
-  background: var(--clay);
-  color: var(--white);
+  background: var(--orange);
+  color: var(--ink);
   border: none;
   border-radius: 999px;
   font-family: var(--sans);
@@ -339,7 +349,7 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   cursor: pointer;
   transition: background 0.18s ease, transform 0.18s ease;
 }
-.btn:hover, .btn:focus-visible { background: var(--clay-deep); transform: translateY(-1px); }
+.btn:hover, .btn:focus-visible { background: var(--orange-hover); transform: translateY(-1px); }
 
 .btn-outline {
   display: inline-block;
@@ -483,7 +493,7 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   color: var(--ink-soft);
 }
 .breadcrumb a { text-decoration: none; }
-.breadcrumb a:hover { color: var(--clay); }
+.breadcrumb a:hover { color: var(--orange-text); }
 .prosjekt-breadcrumb { margin-bottom: 14px; }
 
 .label {
@@ -507,12 +517,18 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--clay);
+  color: var(--orange-text);
 }
 .see-all:hover { color: var(--orange-deep); }
+/* Pa pastellblokker har oransje tekst for lav kontrast (3.5-3.8:1).
+   Der brukes dyp gronn i stedet: 7.0-7.6:1. */
 .section-blossom .see-all,
+.section-leaf .see-all,
+.page-hero .see-all,
 .section-blossom .service-row .num,
-.page-hero-blossom .see-all { color: var(--orange-deep); }
+.section-leaf .service-row .num { color: var(--forest); }
+.section-blossom .fagstripe-links a:hover,
+.fagstripe-links a:hover { color: var(--forest); border-bottom-color: var(--forest); }
 
 .lede { color: var(--ink-soft); }
 
@@ -596,7 +612,7 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--clay);
+  color: var(--orange-text);
   line-height: 1.45;
 }
 .ref-caption .title {
@@ -644,11 +660,11 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--clay);
+  color: var(--orange-text);
 }
 .media-card-body p { font-size: 0.9rem; color: var(--ink-soft); flex-grow: 1; }
 .media-card-body .arrow { font-size: 0.86rem; font-weight: 600; color: var(--fern); }
-.media-card:hover .arrow { color: var(--clay); }
+.media-card:hover .arrow { color: var(--orange-text); }
 
 /* Tekstkort */
 .simple-card-grid {
@@ -676,12 +692,12 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--clay);
+  color: var(--orange-text);
 }
 .simple-card h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 .simple-card p { font-size: 0.95rem; color: var(--ink-soft); }
 .simple-card .arrow { font-size: 0.86rem; font-weight: 600; color: var(--fern); }
-.simple-card:hover .arrow { color: var(--clay); }
+.simple-card:hover .arrow { color: var(--orange-text); }
 .simple-card .tags {
   margin-top: 4px;
   padding: 0;
@@ -900,7 +916,7 @@ nav.links a.nav-link[aria-current="page"]::after { transform: scaleX(1); transfo
   margin-bottom: 4px;
 }
 .contact-value { font-size: 1rem; font-weight: 500; text-decoration: none; }
-a.contact-value:hover { color: var(--clay); }
+a.contact-value:hover { color: var(--orange-text); }
 
 .cta-band {
   display: flex;
@@ -1032,7 +1048,7 @@ footer.site nav a:hover { color: var(--on-pine); }
 .service-list { border-top: 1px solid var(--line); }
 .service-row {
   display: grid;
-  grid-template-columns: 58px minmax(0, 0.85fr) minmax(0, 1.25fr) 34px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) 34px;
   align-items: center;
   gap: clamp(14px, 3vw, 32px);
   padding: clamp(20px, 3vw, 30px) clamp(0px, 1vw, 12px);
@@ -1063,9 +1079,9 @@ footer.site nav a:hover { color: var(--on-pine); }
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 .service-row:hover .go {
-  background: var(--clay);
-  border-color: var(--clay);
-  color: var(--white);
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--ink);
   transform: translateX(3px);
 }
 
@@ -1098,11 +1114,11 @@ footer.site nav a:hover { color: var(--on-pine); }
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--orange-deep);
+  color: var(--orange-text);
 }
 .ref-feature-body .loc { display: block; margin-top: 4px; font-size: 0.88rem; color: var(--ink-soft); }
 .ref-feature-body h3 { margin-top: 6px; font-size: clamp(1.25rem, 2.6vw, 1.8rem); }
-.ref-feature .go-text { font-size: 0.9rem; font-weight: 600; color: var(--clay); white-space: nowrap; }
+.ref-feature .go-text { font-size: 0.9rem; font-weight: 600; color: var(--orange-text); white-space: nowrap; }
 
 /* --- Prosess som tidslinje --- */
 .process-grid .process-item { position: relative; padding-top: 30px; }
@@ -1173,11 +1189,10 @@ footer.site nav a:hover { color: var(--on-pine); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
-  .service-row { grid-template-columns: 38px minmax(0, 1fr) 32px; gap: 8px 14px; align-items: start; }
-  .service-row .num { grid-column: 1; grid-row: 1; padding-top: 3px; }
-  .service-row h3 { grid-column: 2; grid-row: 1; }
-  .service-row .go { grid-column: 3; grid-row: 1; width: 32px; height: 32px; }
-  .service-row p { grid-column: 2 / 4; grid-row: 2; }
+  .service-row { grid-template-columns: minmax(0, 1fr) 32px; gap: 8px 14px; align-items: start; }
+  .service-row h3 { grid-column: 1; grid-row: 1; }
+  .service-row .go { grid-column: 2; grid-row: 1; width: 32px; height: 32px; }
+  .service-row p { grid-column: 1 / 3; grid-row: 2; }
   .ref-feature-media { aspect-ratio: 4/3; }
   .process-grid .process-item::before { right: 0; }
 }
@@ -1185,3 +1200,80 @@ footer.site nav a:hover { color: var(--on-pine); }
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
   .fagstripe-inner { padding: 14px 0; gap: 8px; }
 }
+
+/* ============================================================
+   12. MORK MODUS
+   Samme palett, moerke verdier. Fargeblokkene beholder identiteten
+   sin (gronn blokk forblir gronn, rosa forblir rosa) men i dype
+   toner slik at hierarkiet fra lys modus overlever.
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --forest: #16211a;
+    --forest-deep: #101814;
+    --forest-soft: #273b2e;
+
+    --moss: #8fb894;
+    --moss-light: #a9cf9a;
+
+    /* Fargeblokker som dype toner av samme kulor */
+    --leaf: #22321f;
+    --leaf-soft: #2b3d27;
+    --blossom: #33231e;
+    --blossom-soft: #3d2a24;
+
+    /* Oransje lysnes for a holde kontrast mot mork flate: 7.1:1 */
+    --orange: #ef8b3f;
+    --orange-hover: #f59b55;
+    --orange-text: #f0a061;
+    --orange-deep: #f0a061;
+
+    --bone: #141a15;
+    --white: #1d2620;
+    --ink: #eef2ea;
+    --ink-soft: #a8b3a6;
+    --line: #2b382d;
+
+    --on-dark: #eef2ea;
+    --on-dark-soft: #a8b3a6;
+
+    --error: #f0937f;
+    --error-bg: #33201c;
+    --error-ring: rgba(240, 147, 127, 0.22);
+  }
+
+  /* Bilder dempes marginalt sa de ikke lyser mot morkt underlag */
+  .hero-media img,
+  .ref-card img,
+  .media-card-img img,
+  .ref-feature-media img,
+  .service-gallery-grid img,
+  .detail-media img { filter: brightness(0.92); }
+
+  /* Pa morke fargeblokker maa lenkefargen snus tilbake til lys gronn */
+  .section-blossom .see-all,
+  .section-leaf .see-all,
+  .page-hero .see-all,
+  .section-blossom .service-row .num,
+  .section-leaf .service-row .num { color: var(--moss); }
+
+  .btn { color: #17201a; }
+}
+
+/* ---------- Skjematilstander: hint, feil, status ---------- */
+.form-hint { font-size: 0.84rem; color: var(--ink-soft); }
+.form-error { font-size: 0.84rem; font-weight: 500; color: var(--error); }
+.form-row input.is-invalid,
+.form-row textarea.is-invalid {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px var(--error-ring);
+}
+.form-status {
+  margin-top: 4px;
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.form-status.is-error { background: var(--error-bg); color: var(--error); }
+.form-status.is-ok { background: var(--leaf-soft); color: var(--forest); }
