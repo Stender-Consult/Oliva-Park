@@ -1201,64 +1201,7 @@ footer.site nav a:hover { color: var(--on-pine); }
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
 }
 
-/* ============================================================
-   12. MORK MODUS
-   Samme palett, moerke verdier. Fargeblokkene beholder identiteten
-   sin (gronn blokk forblir gronn, rosa forblir rosa) men i dype
-   toner slik at hierarkiet fra lys modus overlever.
-   ============================================================ */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --forest: #16211a;
-    --forest-deep: #101814;
-    --forest-soft: #273b2e;
 
-    --moss: #8fb894;
-    --moss-light: #a9cf9a;
-
-    /* Fargeblokker som dype toner av samme kulor */
-    --leaf: #22321f;
-    --leaf-soft: #2b3d27;
-    --blossom: #33231e;
-    --blossom-soft: #3d2a24;
-
-    /* Oransje lysnes for a holde kontrast mot mork flate: 7.1:1 */
-    --orange: #ef8b3f;
-    --orange-hover: #f59b55;
-    --orange-text: #f0a061;
-    --orange-deep: #f0a061;
-
-    --bone: #141a15;
-    --white: #1d2620;
-    --ink: #eef2ea;
-    --ink-soft: #a8b3a6;
-    --line: #2b382d;
-
-    --on-dark: #eef2ea;
-    --on-dark-soft: #a8b3a6;
-
-    --error: #f0937f;
-    --error-bg: #33201c;
-    --error-ring: rgba(240, 147, 127, 0.22);
-  }
-
-  /* Bilder dempes marginalt sa de ikke lyser mot morkt underlag */
-  .hero-media img,
-  .ref-card img,
-  .media-card-img img,
-  .ref-feature-media img,
-  .service-gallery-grid img,
-  .detail-media img { filter: brightness(0.92); }
-
-  /* Pa morke fargeblokker maa lenkefargen snus tilbake til lys gronn */
-  .section-blossom .see-all,
-  .section-leaf .see-all,
-  .page-hero .see-all,
-  .section-blossom .service-row .num,
-  .section-leaf .service-row .num { color: var(--moss); }
-
-  .btn { color: #17201a; }
-}
 
 /* ---------- Skjematilstander: hint, feil, status ---------- */
 .form-hint { font-size: 0.84rem; color: var(--ink-soft); }
@@ -1364,34 +1307,81 @@ footer.site nav a:hover { color: var(--on-pine); }
 .ref-feature .go-text { color: var(--forest); }
 .ref-feature-body h3 { font-size: clamp(1.35rem, 3vw, 2rem); }
 
-@media (prefers-color-scheme: dark) {
-  .ref-feature { --line: #2b382d; --ink-soft: #a8b3a6; }
-  .ref-feature-body { background: var(--leaf); }
-  .ref-feature-body .cat,
-  .ref-feature .go-text { color: var(--moss); }
+
+
+
+/* ============================================================
+   14. LYS MERKEVARE: pastell dominerer, morkegronn rammer inn
+   Tidligere var hero-panelet, fagstripen og prosess-seksjonen alle
+   morkegronne. Sammen med header og footer ga det fem morke flater
+   og et naer-svart forsteinntrykk. For et firma som leverer gronne
+   uterom skal pastellene baere siden. Morkegronn brukes na kun som
+   ramme oppe og nede.
+   ============================================================ */
+
+/* --- Hero: lysegront panel i stedet for morkegront --- */
+.hero-split { background: var(--leaf); color: var(--ink); }
+.hero-panel { --ink-soft: #46583e; }
+.hero-panel h1 { color: var(--ink); }
+.hero-panel p { color: #46583e; }
+.hero-panel .eyebrow,
+.hero-panel .eyebrow-on-dark { color: var(--forest); }
+.hero-panel .eyebrow::before,
+.hero-panel .eyebrow-on-dark::before { background: var(--forest); }
+
+/* Outline-knapp trenger mork variant naar den star pa lys flate */
+.hero-panel .btn-outline,
+.section-leaf .btn-outline,
+.section-pine .btn-outline,
+.cta-full .btn-outline,
+.section-blossom .btn-outline {
+  color: var(--forest);
+  border-color: rgba(35, 64, 47, 0.45);
+}
+.hero-panel .btn-outline:hover,
+.section-leaf .btn-outline:hover,
+.section-pine .btn-outline:hover,
+.cta-full .btn-outline:hover,
+.section-blossom .btn-outline:hover {
+  background: rgba(35, 64, 47, 0.08);
+  border-color: var(--forest);
 }
 
-/* De seksjonsomfattende tokenene over gjelder lys modus. Uten disse
-   overstyringene arves varm brun tekst inn pa mork rosa flate: 1.98:1. */
-@media (prefers-color-scheme: dark) {
-  .section-blossom,
-  .page-hero-blossom {
-    --line: #4a342d;
-    --ink-soft: #c9a99d;
-    --surface: #3d2a24;
-    --surface-strong: #45302a;
-  }
-
-  .section-leaf,
-  .page-hero,
-  .page-hero-leaf,
-  .cta-full {
-    --line: #35472f;
-    --ink-soft: #a8bfa0;
-    --surface: #2b3d27;
-    --surface-strong: #324529;
-  }
-
-  .service-row .go { color: var(--moss); }
-  .service-row:hover .go { color: #17201a; }
+/* --- Fagstripe: horer fortsatt til hero, men i samme lyse familie --- */
+.fagstripe {
+  background: var(--leaf);
+  color: var(--ink);
+  border-top: 1px solid rgba(35, 64, 47, 0.18);
 }
+.fagstripe-label { color: var(--forest); }
+.fagstripe-links a { color: var(--ink); }
+.fagstripe-links a:hover,
+.fagstripe-links a:focus-visible { color: var(--forest); border-bottom-color: var(--forest); }
+
+/* --- Prosess: lysegronn seksjon i stedet for hel mork blokk --- */
+.section-pine {
+  background: var(--leaf);
+  color: var(--ink);
+  --line: #a0bd85;
+  --ink-soft: #46583e;
+}
+.section-pine h1,
+.section-pine h2,
+.section-pine h3 { color: var(--ink); }
+.section-pine p { color: #46583e; }
+.section-pine .eyebrow-on-dark { color: var(--forest); }
+.section-pine .eyebrow-on-dark::before { background: var(--forest); }
+.process-item .num { color: var(--forest); }
+.process-item h3 { color: var(--ink); }
+.process-item p { color: #46583e; }
+.process-grid .process-item::before { background: rgba(35, 64, 47, 0.28); }
+.process-grid .process-item::after { background: var(--forest); }
+
+/* --- CTA: rosa, ikke enda en gronn eller mork flate --- */
+.cta-full {
+  background: var(--blossom);
+  --line: #ddb0a1;
+  --ink-soft: #6d4c43;
+}
+.cta-full h2 { color: var(--ink); }
+.cta-full p { color: #6d4c43; }
