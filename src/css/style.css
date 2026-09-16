@@ -374,6 +374,7 @@
   /* ================= PAGE HERO (undersider) ================= */
   .page-hero { background: var(--tint); padding: clamp(40px, 7vw, 60px) 0 clamp(32px, 5vw, 44px); }
   .breadcrumb { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.01em; color: var(--ink-soft); text-transform: uppercase; }
+  .prosjekt-breadcrumb { margin-bottom: 14px; }
   .breadcrumb a { text-decoration: none; }
   .breadcrumb a:hover { color: var(--moss); }
 
