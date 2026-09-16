@@ -3,18 +3,24 @@ layout: base.njk
 title: Kontakt
 permalink: /kontakt/
 ---
-<section class="page-hero page-hero-leaf">
-  <div class="wrap">
-    <div class="breadcrumb"><a href="/">Forside</a> / Kontakt</div>
-    <h1>Kontakt</h1>
-    <p class="lede">Send oss en e-post eller ring, så avtaler vi en befaring.</p>
+<section class="hero-split contact-hero">
+  <div class="hero-panel">
+    <div class="hero-panel-inner">
+      <div class="breadcrumb"><a href="/">Forside</a> / Kontakt</div>
+      <h1>Kontakt oss</h1>
+      <p>Fortell oss kort om hva som skal gjøres og hvor, så tar vi kontakt og avtaler en befaring.</p>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="/images/barnehager-oslo-9.jpg" alt="To fagarbeidere fra Oliva Park raker jord på et uteområde under opparbeiding" loading="eager">
   </div>
 </section>
+
 <section class="section">
-  <div class="wrap contact-layout">
-    <div class="intro">
-      <h2>Fortell oss om prosjektet</h2>
-      <p>Send noen ord om hva som skal gjøres og hvor, så tar vi kontakt for å avtale befaring.</p>
+  <div class="wrap contact-grid">
+    <div class="contact-main">
+      <h2>Be om befaring</h2>
+      <p>Jo mer du får med om omfang, sted og ønsket tidspunkt, jo bedre kan vi forberede oss før vi møtes.</p>
       <form class="contact-form" id="contactForm" novalidate>
         <div class="form-row">
           <label for="cf-name">Navn</label>
@@ -27,29 +33,53 @@ permalink: /kontakt/
           <span class="form-error" id="err-email" hidden>Skriv inn en gyldig e-postadresse.</span>
         </div>
         <div class="form-row">
-          <label for="cf-message">Melding</label>
+          <label for="cf-message">Om prosjektet</label>
           <textarea id="cf-message" name="message" required aria-describedby="hint-message err-message"></textarea>
-          <span class="form-hint" id="hint-message">Hva skal gjøres, hvor, og når passer det?</span>
+          <span class="form-hint" id="hint-message">For eksempel: type arbeid, adresse eller sted, omtrentlig størrelse, og når det passer.</span>
           <span class="form-error" id="err-message" hidden>Skriv noen ord om prosjektet.</span>
         </div>
         <button type="submit" class="btn">Send via e-post</button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
-    <div class="contact-details">
-      <div>
-        <span class="contact-label">E-post</span>
-        <a class="contact-value" href="mailto:post@oliva-park.no">post@oliva-park.no</a>
+
+    <aside class="contact-aside">
+      <div class="contact-card">
+        <h3>Direkte</h3>
+        <div class="contact-lines">
+          <a class="contact-line contact-line-link" href="mailto:post@oliva-park.no">
+            <span class="k">E-post</span>
+            <span class="v">post@oliva-park.no</span>
+          </a>
+          <div class="contact-line">
+            <span class="k">Vi tar oppdrag i</span>
+            <span class="v">Østfold, Akershus og Oslo</span>
+          </div>
+          <div class="contact-line">
+            <span class="k">Oppdragsgivere</span>
+            <span class="v">Private, borettslag, næring og offentlig</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <span class="contact-label">Telefon</span>
-        <span class="contact-value">[Legg til telefonnummer]</span>
+
+      <div class="contact-card contact-card--leaf">
+        <h3>Hva skjer videre</h3>
+        <ol class="next-steps">
+          <li>
+            <span class="step-title">Vi tar kontakt</span>
+            <span class="step-body">Vi svarer på henvendelsen og avtaler tid for befaring.</span>
+          </li>
+          <li>
+            <span class="step-title">Befaring</span>
+            <span class="step-body">Vi møter deg på stedet, kartlegger behov og gir et uforpliktende tilbud.</span>
+          </li>
+          <li>
+            <span class="step-title">Oppstart</span>
+            <span class="step-body">Blir vi enige, planlegger vi løsning og fremdrift sammen.</span>
+          </li>
+        </ol>
       </div>
-      <div>
-        <span class="contact-label">Område</span>
-        <span class="contact-value">Østfold, Akershus og Oslo</span>
-      </div>
-    </div>
+    </aside>
   </div>
 </section>
 <script>
