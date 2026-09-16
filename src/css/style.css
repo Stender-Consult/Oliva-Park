@@ -601,14 +601,31 @@
   /* ================= SERVICE MINI GALLERY ================= */
   .service-gallery { margin-top: clamp(40px, 6vw, 56px); }
   .service-gallery .label { font-family: var(--mono); font-size: 0.78rem; color: var(--moss); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
-  .service-gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .service-gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
   .service-gallery-grid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--r-sm); display: block; transition: transform 0.35s ease; }
   .service-gallery-grid .g-item {
     display: block; overflow: hidden; border-radius: var(--r-sm);
     border: 0; padding: 0; background: none; cursor: zoom-in; width: 100%;
+    box-shadow: 0 10px 24px -16px rgba(20,26,17,0.35);
   }
   .service-gallery-grid .g-item:hover img, .service-gallery-grid .g-item:focus-visible img { transform: scale(1.06); }
-  @media (max-width: 720px) { .service-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 880px) { .service-gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .service-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  /* ================= PROSJEKT-INTRO (prosjektside) ================= */
+  .prosjekt-intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(24px, 4vw, 48px);
+  }
+  .prosjekt-desc { color: var(--ink-soft); font-size: 1.08rem; max-width: 62ch; flex: 1 1 380px; }
+  .prosjekt-meta { display: flex; flex-direction: column; gap: 16px; flex: 0 0 auto; }
+  .prosjekt-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .prosjekt-meta-label { font-family: var(--mono); font-size: 0.72rem; color: var(--moss); text-transform: uppercase; letter-spacing: 0.06em; }
+  .prosjekt-meta-value { font-weight: 650; color: var(--ink); font-size: 0.98rem; max-width: 26ch; }
+  .other-grid { margin-top: 18px; }
 
   /* ================= LIGHTBOX ================= */
   .lightbox {

@@ -20,12 +20,24 @@ layout: base.njk
 </div>
 <section class="section">
   <div class="wrap">
-    <p style="color: var(--ink-soft); font-size: 1.08rem; max-width: 62ch;">{{ beskrivelse }}</p>
+    <div class="prosjekt-intro reveal">
+      <p class="prosjekt-desc">{{ beskrivelse }}</p>
+      <div class="prosjekt-meta">
+        <div class="prosjekt-meta-item">
+          <span class="prosjekt-meta-label">Kategori</span>
+          <span class="prosjekt-meta-value">{{ kategori | join(", ") }}</span>
+        </div>
+        <div class="prosjekt-meta-item">
+          <span class="prosjekt-meta-label">Sted</span>
+          <span class="prosjekt-meta-value">{{ sted }}</span>
+        </div>
+      </div>
+    </div>
     {% if bilder %}
-    <div class="service-gallery" style="margin-top: clamp(32px, 5vw, 48px);">
-      <div class="service-gallery-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 620px;">
+    <div class="service-gallery reveal-group">
+      <div class="service-gallery-grid">
         {% for b in bilder %}
-        <button type="button" class="g-item" onclick="openLightbox(this)"><img src="{{ b }}" alt="{{ tittel }}"></button>
+        <button type="button" class="g-item reveal" onclick="openLightbox(this)"><img src="{{ b }}" alt="{{ tittel }}" loading="lazy"></button>
         {% endfor %}
       </div>
     </div>
@@ -34,10 +46,17 @@ layout: base.njk
   <div class="wrap">
     <div class="other-services">
       <div class="label">Andre prosjekter</div>
-      <div class="other-links">
+      <div class="ref-grid other-grid">
         {% for p in collections.prosjekter %}
         {% if p.data.tittel != tittel %}
-        <a href="{{ p.url }}">{{ p.data.tittel }}</a>
+        <a class="ref-card" href="{{ p.url }}">
+          <span class="ref-card-media"><img src="{{ p.data.bilde }}" alt="{{ p.data.tittel }}"></span>
+          <span class="ref-caption">
+            <span class="cat">{{ p.data.kategori | join(", ") }}</span>
+            <span class="title">{{ p.data.tittel }}</span>
+            <span class="loc">{{ p.data.sted }}</span>
+          </span>
+        </a>
         {% endif %}
         {% endfor %}
       </div>
