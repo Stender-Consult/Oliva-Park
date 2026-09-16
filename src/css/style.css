@@ -1,20 +1,21 @@
 
   :root {
-    --forest: #384329;
-    --forest-2: #29321d;
-    --forest-3: #4a5738;
-    --moss: #5a6b3f;
+    --forest: #1f2c17;
+    --forest-2: #141d0e;
+    --forest-3: #35472a;
+    --moss: #4c5e35;
     --orange: #ec6b1f;
-    --orange-deep: #cf5912;
+    --orange-deep: #c1500f;
     --orange-tint: #fbe4d1;
-    --paper: #fdfdf7;
+    --paper: #fffdf8;
+    --stone: #efe8d8;
     --sand: #eef1df;
     --park-tint: #b7cca3;
-    --tint: #e8ecd7;
-    --tint-2: #dbe3bf;
-    --ink: #1d2214;
+    --tint: #e3e8d0;
+    --tint-2: #cdd9ae;
+    --ink: #1b2113;
     --ink-soft: #5c6547;
-    --line: #d7dfbe;
+    --line: #ddd4bf;
     --on-forest: #fbfcf5;
     --on-forest-soft: #c9d3ac;
     --display: "Archivo", "Segoe UI", system-ui, sans-serif;
@@ -29,7 +30,7 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--park-tint);
+    background: var(--stone);
     color: var(--ink);
     font-family: var(--sans);
     font-size: 16px;
@@ -81,9 +82,10 @@
     position: sticky;
     top: 0;
     z-index: 40;
-    background: color-mix(in srgb, var(--park-tint) 88%, transparent);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
+    border-top: 3px solid var(--forest);
   }
   .nav-row {
     display: flex;
