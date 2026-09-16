@@ -2,30 +2,36 @@
 layout: base.njk
 title: Forside
 ---
-<section class="hero hero-bleed">
-  <div class="hero-bg">
-    <img src="/images/hero-uteanlegg.jpg" alt="Ferdig opparbeidet uteareal med grøntanlegg og lekeplass, sett ovenfra" loading="eager">
-  </div>
-  <svg class="hero-contours" viewBox="0 0 1200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g fill="none" stroke="#fffdf8" stroke-width="1.1">
-      <path d="M-40,120 C 200,60 340,170 560,100 S 980,60 1240,140" opacity="0.5"/>
-      <path d="M-40,190 C 220,140 380,240 600,170 S 960,130 1240,210" opacity="0.42"/>
-      <path d="M-40,260 C 240,220 420,310 640,240 S 940,210 1240,280" opacity="0.34"/>
-    </g>
-  </svg>
-  <div class="hero-content">
-    <div class="hero-copy">
+<section class="hero-split">
+  <div class="hero-panel">
+    <div class="hero-panel-inner">
+      <div class="eyebrow eyebrow-on-dark">Anleggsgartner</div>
       <h1>Vi skaper gode uterom</h1>
       <p>Løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter — fra grunnarbeid til ferdig grøntanlegg.</p>
       <div class="hero-actions">
         <a class="btn" href="/kontakt/">Be om befaring</a>
-        <a class="btn-outline" href="/om-oss/">Om oss</a>
+        <a class="btn-outline" href="/referanser/">Se prosjekter</a>
       </div>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="/images/hero-uteanlegg.jpg" alt="Ferdig opparbeidet uteareal med grøntanlegg og lekeplass, sett ovenfra" loading="eager">
+  </div>
+</section>
+
+<section class="fagstripe">
+  <div class="wrap fagstripe-inner">
+    <span class="fagstripe-label">Fagområder</span>
+    <div class="fagstripe-links">
+      <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
+      <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
+      <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
+      <a href="/tjenester/riving/">Rivearbeider</a>
     </div>
   </div>
 </section>
 
-<section class="section section-sky">
+<section class="section">
   <div class="wrap intro-grid reveal">
     <div>
       <div class="eyebrow">Om oss</div>
@@ -35,7 +41,42 @@ title: Forside
   </div>
 </section>
 
-<section class="process-section">
+<section class="section section-blossom">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Våre tjenester</h2>
+      <a class="see-all" href="/tjenester/">Se alle tjenester →</a>
+    </div>
+    <div class="service-list reveal-group">
+      <a class="service-row reveal" href="/tjenester/utenomhusarbeider/">
+        <span class="num">01</span>
+        <h3>Utenomhusarbeider</h3>
+        <p>Hager, belegningsstein, naturstein, murer og beplantning.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="service-row reveal" href="/tjenester/grunn-va/">
+        <span class="num">02</span>
+        <h3>Grunn- og VA-arbeider</h3>
+        <p>Utgraving, planering, drenering og VA-ledninger.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="service-row reveal" href="/tjenester/skjotsel/">
+        <span class="num">03</span>
+        <h3>Skjøtsel og vedlikehold</h3>
+        <p>Løpende stell og vedlikehold av uteanlegg og grøntområder.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="service-row reveal" href="/tjenester/riving/">
+        <span class="num">04</span>
+        <h3>Rivearbeider</h3>
+        <p>Sikker og ryddig riving av bygg og konstruksjoner.</p>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-pine">
   <div class="wrap">
     <div class="process-head reveal">
       <div>
@@ -46,91 +87,25 @@ title: Forside
     </div>
     <div class="process-grid reveal-group">
       <div class="process-item reveal">
-        <svg class="process-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="9" y="6" width="22" height="28" rx="2" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M15 4h10a1 1 0 0 1 1 1v3H14V5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M14 17h12M14 22h12M14 27h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
         <span class="num">01</span>
         <h3>Befaring og kartlegging</h3>
         <p>Vi møter deg på stedet, kartlegger behov og gir et uforpliktende tilbud.</p>
       </div>
       <div class="process-item reveal">
-        <svg class="process-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M8 30 26 12l5 5-18 18H8v-5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-          <path d="M22 16l5 5" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M6 35h28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
         <span class="num">02</span>
         <h3>Planlegging</h3>
         <p>Vi planlegger løsning, fremdrift og materialer sammen med deg.</p>
       </div>
       <div class="process-item reveal">
-        <svg class="process-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M13 27 27 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M24 10c2 2 4 4 6 6l-3 3-6-6 3-3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-          <path d="M10 30l-2 6 6-2 12-12-4-4-12 12Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-        </svg>
         <span class="num">03</span>
         <h3>Utførelse</h3>
         <p>Fagfolk gjennomfører arbeidet med kvalitet og presisjon fra start til slutt.</p>
       </div>
       <div class="process-item reveal">
-        <svg class="process-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M20 5 32 9v10c0 9-5 14-12 16-7-2-12-7-12-16V9l12-4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-          <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
         <span class="num">04</span>
         <h3>Kvalitetssikring</h3>
         <p>Vi går gjennom resultatet sammen med deg før overlevering.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-tint">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Våre tjenester</h2>
-      <a class="see-all" href="/tjenester/">Se alle tjenester →</a>
-    </div>
-    <div class="teaser-grid reveal-group">
-      <a class="media-card reveal" href="/tjenester/utenomhusarbeider/">
-        <span class="media-card-img"><img src="/images/utenomhusarbeider.jpg" alt="Belegningsstein legges på gårdsplass"></span>
-        <span class="media-card-body">
-          <span class="num">01</span>
-          <h3>Utenomhusarbeider</h3>
-          <p>Hager, belegningsstein, naturstein, murer og beplantning.</p>
-          <span class="arrow">Les mer →</span>
-        </span>
-      </a>
-      <a class="media-card reveal" href="/tjenester/grunn-va/">
-        <span class="media-card-img"><img src="/images/grunn-va.jpg" alt="Gravemaskin i arbeid med utgraving"></span>
-        <span class="media-card-body">
-          <span class="num">02</span>
-          <h3>Grunn- og VA-arbeider</h3>
-          <p>Utgraving, planering, drenering og VA-ledninger.</p>
-          <span class="arrow">Les mer →</span>
-        </span>
-      </a>
-      <a class="media-card reveal" href="/tjenester/skjotsel/">
-        <span class="media-card-img"><img src="/images/skjotsel.jpg" alt="Skjøtsel av grøntanlegg"></span>
-        <span class="media-card-body">
-          <span class="num">03</span>
-          <h3>Skjøtsel og vedlikehold</h3>
-          <p>Løpende stell og vedlikehold av uteanlegg og grøntområder.</p>
-          <span class="arrow">Les mer →</span>
-        </span>
-      </a>
-      <a class="media-card reveal" href="/tjenester/riving/">
-        <span class="media-card-img"><img src="/images/riving.jpg" alt="Riving av eksisterende konstruksjon"></span>
-        <span class="media-card-body">
-          <span class="num">04</span>
-          <h3>Rivearbeider</h3>
-          <p>Sikker og ryddig riving av bygg og konstruksjoner.</p>
-          <span class="arrow">Les mer →</span>
-        </span>
-      </a>
     </div>
   </div>
 </section>
@@ -141,9 +116,24 @@ title: Forside
       <h2>Referanser</h2>
       <a class="see-all" href="/referanser/">Se flere prosjekter →</a>
     </div>
+    {% for prosjekt in collections.prosjekter %}
+    {% if loop.index == 1 %}
+    <a class="ref-feature reveal" href="{{ prosjekt.url }}">
+      <span class="ref-feature-media"><img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}"></span>
+      <span class="ref-feature-body">
+        <span>
+          <span class="cat">{{ prosjekt.data.kategori | join(", ") }}</span>
+          <h3>{{ prosjekt.data.tittel }}</h3>
+          <span class="loc">{{ prosjekt.data.sted }}</span>
+        </span>
+        <span class="go-text">Se prosjektet →</span>
+      </span>
+    </a>
+    {% endif %}
+    {% endfor %}
     <div class="ref-grid reveal-group">
       {% for prosjekt in collections.prosjekter %}
-      {% if loop.index <= 3 %}
+      {% if loop.index > 1 and loop.index <= 4 %}
       <a class="ref-card reveal" href="{{ prosjekt.url }}">
         <span class="ref-card-media"><img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}"></span>
         <span class="ref-caption">
@@ -158,14 +148,12 @@ title: Forside
   </div>
 </section>
 
-<section class="section-tight">
-  <div class="wrap">
-    <div class="cta-band reveal">
-      <div>
-        <h2>Planlegger du et prosjekt?</h2>
-        <p>Vi tar oppdrag i Østfold, Akershus og Oslo — send oss en henvendelse, så avtaler vi en befaring.</p>
-      </div>
-      <a class="btn" href="/kontakt/">Ta kontakt</a>
+<section class="cta-full">
+  <div class="wrap cta-full-inner reveal">
+    <div>
+      <h2>Planlegger du et prosjekt?</h2>
+      <p>Vi tar oppdrag i Østfold, Akershus og Oslo — send oss en henvendelse, så avtaler vi en befaring.</p>
     </div>
+    <a class="btn" href="/kontakt/">Ta kontakt</a>
   </div>
 </section>
