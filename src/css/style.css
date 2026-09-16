@@ -932,8 +932,9 @@ a.contact-value:hover { color: var(--orange-text); }
 .cta-band p { margin-top: 8px; max-width: 46ch; color: var(--ink-soft); }
 
 footer.site {
-  margin-top: clamp(48px, 7vw, 80px);
-  padding: clamp(36px, 5vw, 56px) 0 clamp(24px, 3vw, 32px);
+  /* Ingen margin-top: den skapte en beige stripe mellom en fargeblokk
+     og footeren. Footerens egen toppadding gir luften som trengs. */
+  padding: clamp(48px, 6vw, 72px) 0 clamp(24px, 3vw, 32px);
   background: var(--pine);
   color: var(--on-pine);
 }
@@ -1198,7 +1199,6 @@ footer.site nav a:hover { color: var(--on-pine); }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
-  .fagstripe-inner { padding: 14px 0; gap: 8px; }
 }
 
 /* ============================================================
@@ -1277,3 +1277,121 @@ footer.site nav a:hover { color: var(--on-pine); }
 }
 .form-status.is-error { background: var(--error-bg); color: var(--error); }
 .form-status.is-ok { background: var(--leaf-soft); color: var(--forest); }
+
+/* ============================================================
+   13. HARMONISERING: seksjonsomfattende tokens
+   Naar en seksjon har farge, definerer den sine egne verdier for
+   skillelinje, dempet tekst og kontrollkant. Alle komponenter inni
+   bruker allerede var(--line) og var(--ink-soft), sa de tilpasser
+   seg automatisk i stedet for a dra med seg beige/gronngra toner
+   som ikke horer hjemme pa flaten.
+   ============================================================ */
+
+/* Rosa blokk: varme toner. Kjolig gronngra tekst pa varm rosa
+   gav 4.07:1 og sa skitten ut. Varm brun gir 5.08:1. */
+.section-blossom,
+.page-hero-blossom {
+  --line: #ddb0a1;
+  --ink-soft: #6d4c43;
+  --surface: #f8e2da;
+  --surface-strong: #fbeee9;
+}
+
+/* Lysegronn blokk: gronne toner */
+.section-leaf,
+.page-hero,
+.page-hero-leaf,
+.cta-full {
+  --line: #a0bd85;
+  --ink-soft: #46583e;
+  --surface: #cbe0b8;
+  --surface-strong: #dbeacd;
+}
+
+/* Beige grunnflate beholder sine egne */
+.section,
+.section-white { --surface: var(--white); }
+
+/* Kontrollkanter folger seksjonen i stedet for global beige */
+.service-row .go { border-color: var(--line); color: var(--forest); }
+.service-row:hover, .service-row:focus-visible { background: var(--surface-strong); }
+.service-row:hover .go { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+
+/* Fagstripen horer til hero-en, ikke til innholdet under.
+   Dempet fra egen lysegronn blokk til en morkere hylle i samme
+   familie som hero-panelet: farre fargebytter i forste skjermbilde. */
+.fagstripe {
+  background: var(--forest-deep);
+  color: var(--on-dark);
+  border-top: 1px solid rgba(246, 243, 236, 0.1);
+}
+.fagstripe-inner {
+  /* padding-block, ikke shorthand: shorthand nullet sidepaddingen
+     fra .wrap og teksten la inntil skjermkanten */
+  padding-block: 18px;
+  padding-inline: clamp(20px, 5vw, 48px);
+  row-gap: 10px;
+}
+.fagstripe-label { color: var(--moss-light); }
+.fagstripe-links a { color: var(--on-dark-soft); }
+.fagstripe-links a:hover,
+.fagstripe-links a:focus-visible { color: var(--on-dark); border-bottom-color: var(--moss-light); }
+
+/* Seksjonshode: mer luft mellom overskrift og lenke naar den brytes */
+.section-head { row-gap: 6px; }
+
+/* Typografisk hierarki: tydeligere sprang mellom seksjonstittel og
+   radtittel, de la for taett for */
+.section-head h2 { font-size: clamp(1.55rem, 3.2vw, 2.2rem); }
+.service-row h3 { font-size: clamp(1.05rem, 2vw, 1.4rem); }
+
+@media (max-width: 560px) {
+  .fagstripe-inner { padding-block: 16px; padding-inline: clamp(20px, 5vw, 48px); gap: 6px 18px; }
+  .section-head { row-gap: 10px; }
+}
+
+/* Fremhevet prosjekt skal lese som hovedsak, ikke som enda et kort.
+   Pa mobil kollapser begge til full bredde, sa storrelse alene skiller
+   dem ikke. Lysegront brodtekstfelt gir skillet uten a bryte paletten. */
+.ref-feature {
+  --line: #a0bd85;
+  --ink-soft: #46583e;
+}
+.ref-feature-body { background: var(--leaf-soft); }
+/* Tekst-oransje faller til 4.26:1 pa lysegront. Kategorien bruker
+   dyp gronn her i stedet. */
+.ref-feature-body .cat { color: var(--forest); }
+.ref-feature .go-text { color: var(--forest); }
+.ref-feature-body h3 { font-size: clamp(1.35rem, 3vw, 2rem); }
+
+@media (prefers-color-scheme: dark) {
+  .ref-feature { --line: #2b382d; --ink-soft: #a8b3a6; }
+  .ref-feature-body { background: var(--leaf); }
+  .ref-feature-body .cat,
+  .ref-feature .go-text { color: var(--moss); }
+}
+
+/* De seksjonsomfattende tokenene over gjelder lys modus. Uten disse
+   overstyringene arves varm brun tekst inn pa mork rosa flate: 1.98:1. */
+@media (prefers-color-scheme: dark) {
+  .section-blossom,
+  .page-hero-blossom {
+    --line: #4a342d;
+    --ink-soft: #c9a99d;
+    --surface: #3d2a24;
+    --surface-strong: #45302a;
+  }
+
+  .section-leaf,
+  .page-hero,
+  .page-hero-leaf,
+  .cta-full {
+    --line: #35472f;
+    --ink-soft: #a8bfa0;
+    --surface: #2b3d27;
+    --surface-strong: #324529;
+  }
+
+  .service-row .go { color: var(--moss); }
+  .service-row:hover .go { color: #17201a; }
+}
