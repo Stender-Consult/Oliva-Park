@@ -9,6 +9,7 @@
     --orange-tint: #fbe4d1;
     --paper: #fdfdf7;
     --sand: #eef1df;
+    --park-tint: #dcebd4;
     --tint: #e8ecd7;
     --tint-2: #dbe3bf;
     --ink: #1d2214;
@@ -28,7 +29,7 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--sand);
+    background: var(--park-tint);
     color: var(--ink);
     font-family: var(--sans);
     font-size: 16px;
@@ -80,7 +81,7 @@
     position: sticky;
     top: 0;
     z-index: 40;
-    background: color-mix(in srgb, var(--sand) 88%, transparent);
+    background: color-mix(in srgb, var(--park-tint) 88%, transparent);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
