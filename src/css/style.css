@@ -8,51 +8,54 @@
    ============================================================ */
 
 /* ---------- 1. TOKENS ----------
-   Palett: dyp gronn (anker) + oransje (aksent) = komplementaerpar.
-   Myk rosa = avdempet tone i oransjefamilien. Frisk lysgronn = lys tone av dyp gronn.
+   Palett: en park i sol. Fargene harmonerer fordi de faktisk opptrer
+   sammen i samme scene: gress, himmel, sollys, jord.
+   Dypt lov er ankeret, oransje er merkevaren og handlingsfargen.
    ------------------------------------------------------------ */
 :root {
-  /* Dyp gronn - anker */
-  --forest: #23402f;
-  --forest-deep: #182e21;
-  --forest-soft: #375947;
+  /* Dypt lovverk - anker */
+  --forest: #24512f;
+  --forest-deep: #1a3d23;
+  --forest-soft: #3a6b42;
 
-  /* Mellomgronn - lenker og detaljer */
-  --moss: #4e7358;
-  --moss-light: #9dbf88;
+  /* Gress */
+  --moss: #41702a;          /* tekstsikker gronn pa lys flate: 5.63:1 */
+  --moss-light: #a5d16f;    /* aksent pa mork flate: 5.21:1 */
+  --grass: #7cb342;         /* kun flater og dekor, aldri liten tekst */
+  --leaf: #c5e1a5;          /* sollyst gress - fargeblokk */
+  --leaf-soft: #dcecc7;
 
-  /* Frisk lysgronn - fargeblokk */
-  --leaf: #b9d39f;
-  --leaf-soft: #d5e5c4;
+  /* Sollys */
+  --sun: #f6c445;
+  --sun-light: #fce9b6;     /* solflekk - fargeblokk */
+  --blossom: #fce9b6;       /* alias: erstatter den gamle rosa */
+  --blossom-soft: #fdf3d8;
 
-  /* Myk rosa - fargeblokk */
-  --blossom: #f2cbbd;
-  --blossom-soft: #f8e2da;
+  /* Himmel */
+  --sky-blue: #8ecae6;
+  --sky-light: #d6ecf7;     /* fargeblokk */
 
-  /* Oransje - handlingsfarge.
-     --orange er kun fyllfarge (knapper) og brukes med morkt blekk som tekst: 5.25:1.
-     --orange-text er tekstvarianten for lenker pa lys bakgrunn: 5.29:1 mot beige. */
+  /* Oransje - handlingsfarge */
   --orange: #e0722a;
   --orange-hover: #cf661f;
   --orange-text: #9e5323;
   --orange-deep: #9e5323;
 
-  /* Systemfarger: feilfargen er en dyp variant av terrakotta, ikke generisk rod.
-     8.2:1 mot hvit, bestar AA med god margin. */
+  /* Systemfarger */
   --error: #8f2f21;
   --error-bg: #fbeae6;
   --error-ring: rgba(143, 47, 33, 0.16);
 
   /* Noytraler */
-  --bone: #faf7f1;
+  --bone: #fdfaf2;
   --white: #ffffff;
-  --ink: #17201a;
-  --ink-soft: #5a655c;
-  --line: #e6e0d6;
+  --ink: #15211a;
+  --ink-soft: #566055;
+  --line: #e7e1d3;
 
   /* Pa mork bakgrunn */
-  --on-dark: #f6f3ec;
-  --on-dark-soft: #bacfb4;
+  --on-dark: #f7f4ea;
+  --on-dark-soft: #c2d6b4;
 
   /* Bakoverkompatible aliaser */
   --spruce: var(--forest);
@@ -63,8 +66,8 @@
   --pine-soft: var(--forest-soft);
   --sage: var(--leaf);
   --mint: var(--leaf);
-  --sand: var(--blossom);
-  --sky: var(--leaf);
+  --sand: var(--sun-light);
+  --sky: var(--sky-light);
   --clay: var(--orange);
   --clay-deep: var(--orange-deep);
   --fern: var(--moss);
@@ -1234,10 +1237,17 @@ footer.site nav a:hover { color: var(--on-pine); }
    gav 4.07:1 og sa skitten ut. Varm brun gir 5.08:1. */
 .section-blossom,
 .page-hero-blossom {
-  --line: #ddb0a1;
-  --ink-soft: #6d4c43;
-  --surface: #f8e2da;
-  --surface-strong: #fbeee9;
+  --line: #e6cf95;
+  --ink-soft: #6b5520;
+  --surface: #fdf3d8;
+  --surface-strong: #fef7e6;
+}
+
+.section-sky-light {
+  --line: #a9d4e8;
+  --ink-soft: #3d5a66;
+  --surface: #e8f4fb;
+  --surface-strong: #f1f9fd;
 }
 
 /* Lysegronn blokk: gronne toner */
@@ -1331,6 +1341,7 @@ footer.site nav a:hover { color: var(--on-pine); }
 
 /* Outline-knapp trenger mork variant naar den star pa lys flate */
 .hero-panel .btn-outline,
+.hero-intro .btn-outline,
 .section-leaf .btn-outline,
 .section-pine .btn-outline,
 .cta-full .btn-outline,
@@ -1339,6 +1350,7 @@ footer.site nav a:hover { color: var(--on-pine); }
   border-color: rgba(35, 64, 47, 0.45);
 }
 .hero-panel .btn-outline:hover,
+.hero-intro .btn-outline:hover,
 .section-leaf .btn-outline:hover,
 .section-pine .btn-outline:hover,
 .cta-full .btn-outline:hover,
@@ -1509,4 +1521,205 @@ a.contact-line-link:focus-visible .v { color: var(--orange-text); text-decoratio
   .gront-item:last-child { grid-column: 1 / -1; }
   .gront-item:last-child img { aspect-ratio: 16/9; }
   .gront-item figcaption { font-size: 0.68rem; }
+}
+
+/* ============================================================
+   17. LIV: kurver, bevegelse og sollys
+   Siden var stablede rektangler med harde kanter. En park er
+   organisk, sa fargeblokkene kurver na opp over hverandre som
+   myke koller, bildene far portalform, og lyset beveger seg.
+   All bevegelse slas av under prefers-reduced-motion.
+   ============================================================ */
+
+/* --- Myke koller mellom fargeblokker --- */
+.section-curve {
+  position: relative;
+  z-index: 1;
+  border-radius: clamp(28px, 5vw, 64px) clamp(28px, 5vw, 64px) 0 0;
+  margin-top: calc(-1 * clamp(20px, 3.5vw, 44px));
+}
+.section-curve-both {
+  border-radius: clamp(28px, 5vw, 64px);
+  margin-bottom: calc(-1 * clamp(20px, 3.5vw, 44px));
+}
+
+/* --- Sollys i hero --- */
+.hero-split { position: relative; overflow: hidden; }
+.hero-sun {
+  position: absolute;
+  top: -12%;
+  right: 6%;
+  width: clamp(200px, 26vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(246, 196, 69, 0.62) 0%,
+    rgba(246, 196, 69, 0.28) 38%,
+    rgba(246, 196, 69, 0) 70%);
+  animation: solPust 9s ease-in-out infinite alternate;
+}
+@keyframes solPust {
+  from { transform: scale(1) translateY(0); opacity: 0.85; }
+  to   { transform: scale(1.12) translateY(10px); opacity: 1; }
+}
+
+/* --- Parallakse pa heltebildet, drevet av scroll uten JS --- */
+@supports (animation-timeline: view()) {
+  .hero-media img {
+    animation: heroDrift linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+  @keyframes heroDrift {
+    from { transform: scale(1.12) translateY(-3%); }
+    to   { transform: scale(1.12) translateY(3%); }
+  }
+}
+
+/* --- Rullende fagomradestripe --- */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  padding-block: 16px;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: clamp(20px, 3vw, 44px);
+  animation: rull 36s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 44px);
+  white-space: nowrap;
+  font-family: var(--display);
+  font-size: clamp(1rem, 1.9vw, 1.35rem);
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.marquee-item:hover { color: var(--orange-text); }
+.marquee-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+@keyframes rull {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* --- Portalform pa plantebildene --- */
+.gront-item img {
+  border-radius: 999px 999px var(--r-md) var(--r-md) / 34% 34% var(--r-md) var(--r-md);
+}
+.gront-item:last-child img { border-radius: var(--r-lg); }
+
+/* --- Rikere kort: loft, zoom og et streif av sollys --- */
+.ref-card, .media-card, .simple-card, .ref-feature { position: relative; }
+.ref-card::after, .media-card::after, .simple-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(120% 80% at 50% 0%, rgba(246, 196, 69, 0.22), transparent 62%);
+}
+.ref-card:hover::after, .media-card:hover::after, .simple-card:hover::after { opacity: 1; }
+.ref-card:hover, .media-card:hover, .simple-card:hover, .ref-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 38px -22px rgba(21, 33, 26, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sun { animation: none; }
+  .marquee-track { animation: none; }
+  .hero-media img { animation: none; }
+}
+
+/* ============================================================
+   18. HERO-SCENE
+   Innfelt bilde med myke hjorner mot krem bakgrunn, tekst under.
+   Erstatter det delte panelet, som la tekst og bilde side om side
+   og gjorde forsteinntrykket firkantet.
+   ============================================================ */
+.hero-stage {
+  position: relative;
+  background: var(--bone);
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+.hero-photo {
+  position: relative;
+  margin: clamp(10px, 1.6vw, 18px);
+  border-radius: clamp(18px, 2.4vw, 30px);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  max-height: 68vh;
+  background: var(--forest);
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-intro {
+  padding-top: clamp(28px, 4.5vw, 52px);
+  max-width: 1200px;
+}
+.hero-intro h1 {
+  margin-top: 14px;
+  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+  line-height: 1.06;
+}
+.hero-intro p {
+  margin-top: 18px;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.98rem, 1.6vw, 1.08rem);
+}
+.hero-intro .hero-actions { justify-content: flex-start; margin-top: 26px; }
+
+/* Rund blaknapp nede til hoyre, som i referansen */
+.scroll-cue {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vw, 36px);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 10px 24px -12px rgba(21, 33, 26, 0.6);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.scroll-cue svg { width: 22px; height: 22px; }
+.scroll-cue:hover { background: var(--forest-deep); transform: translateY(3px); }
+
+/* Fagstripen er na en rullende marquee i stedet for statisk rad */
+.fagstripe {
+  background: var(--sun-light);
+  color: var(--ink);
+  border-top: none;
+}
+.fagstripe .marquee-item a { text-decoration: none; color: inherit; }
+.fagstripe .marquee-item a:hover { color: var(--orange-text); }
+
+@media (max-width: 980px) {
+  /* Under denne bredden kolliderer den runde knappen med CTA-ene.
+     Den er en bekvemmelighet, ikke navigasjon, sa den utgar. */
+  .scroll-cue { display: none; }
+}
+@media (max-width: 720px) {
+  .hero-photo { aspect-ratio: 4/3; max-height: 52vh; }
+  .hero-intro h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
 }

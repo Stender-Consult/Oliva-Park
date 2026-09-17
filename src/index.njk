@@ -2,36 +2,39 @@
 layout: base.njk
 title: Forside
 ---
-<section class="hero-split">
-  <div class="hero-panel">
-    <div class="hero-panel-inner">
-      <div class="eyebrow eyebrow-on-dark">Anleggsgartner</div>
-      <h1>Vi skaper gode uterom</h1>
-      <p>Løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter, fra grunnarbeid til ferdig grøntanlegg.</p>
-      <div class="hero-actions">
-        <a class="btn" href="/kontakt/">Be om befaring</a>
-        <a class="btn-outline" href="/referanser/">Se prosjekter</a>
-      </div>
+<section class="hero-stage">
+  <div class="hero-photo">
+    <img src="/images/hero-gront.jpg" alt="Ferdig opparbeidet uteområde med nylagt plen og nyplantede trær" loading="eager">
+    <span class="hero-sun" aria-hidden="true"></span>
+  </div>
+
+  <div class="wrap hero-intro">
+    <div class="eyebrow">Anleggsgartner</div>
+    <h1>Vi skaper<br>vakre uterom</h1>
+    <p>Løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter, fra grunnarbeid til ferdig grøntanlegg.</p>
+    <div class="hero-actions">
+      <a class="btn" href="/kontakt/">Be om befaring</a>
+      <a class="btn-outline" href="/referanser/">Se prosjekter</a>
     </div>
   </div>
-  <div class="hero-media">
-    <img src="/images/hero-gront.jpg" alt="Ferdig opparbeidet uteområde med nylagt plen og nyplantede trær" loading="eager">
-  </div>
+
+  <a class="scroll-cue" href="#om-oss" aria-label="Bla ned til innholdet">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 4v15m0 0 6-6m-6 6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </section>
 
 <section class="fagstripe">
-  <div class="wrap fagstripe-inner">
-    <span class="fagstripe-label">Fagområder</span>
-    <div class="fagstripe-links">
-      <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
-      <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
-      <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
-      <a href="/tjenester/riving/">Rivearbeider</a>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item"><a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a><span class="marquee-dot"></span><a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a><span class="marquee-dot"></span><a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a><span class="marquee-dot"></span><a href="/tjenester/riving/">Rivearbeider</a><span class="marquee-dot"></span></span>
+      <span class="marquee-item" aria-hidden="true"><a href="/tjenester/utenomhusarbeider/" tabindex="-1">Utenomhusarbeider</a><span class="marquee-dot"></span><a href="/tjenester/grunn-va/" tabindex="-1">Grunn- og VA-arbeider</a><span class="marquee-dot"></span><a href="/tjenester/skjotsel/" tabindex="-1">Skjøtsel og vedlikehold</a><span class="marquee-dot"></span><a href="/tjenester/riving/" tabindex="-1">Rivearbeider</a><span class="marquee-dot"></span></span>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="om-oss">
   <div class="wrap">
     <div class="intro-grid reveal">
       <div>
