@@ -1471,3 +1471,42 @@ a.contact-line-link:focus-visible .v { color: var(--orange-text); text-decoratio
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   16. GRONT-RUTENETT
+   Beplantning og grontanlegg tidlig pa forsiden, sa park-inntrykket
+   kommer med en gang og ikke bare gjennom grunnarbeidsbilder.
+   ============================================================ */
+.gront-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  margin-top: clamp(32px, 5vw, 52px);
+}
+.gront-item { margin: 0; }
+.gront-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  transition: transform 0.5s ease;
+}
+.gront-item:hover img { transform: scale(1.03); }
+.gront-item figcaption {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+@media (max-width: 720px) {
+  /* To i forste rad, det tredje over full bredde. Alle tre vises,
+     i stedet for a skjule ett slik at mobilbrukere gikk glipp av det. */
+  .gront-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .gront-item img { aspect-ratio: 1/1; }
+  .gront-item:last-child { grid-column: 1 / -1; }
+  .gront-item:last-child img { aspect-ratio: 16/9; }
+  .gront-item figcaption { font-size: 0.68rem; }
+}
