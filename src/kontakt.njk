@@ -3,18 +3,8 @@ layout: base.njk
 title: Kontakt
 permalink: /kontakt/
 ---
-<section class="hero-split contact-hero">
-  <div class="hero-panel">
-    <div class="hero-panel-inner">
-      <div class="breadcrumb"><a href="/">Forside</a> / Kontakt</div>
-      <h1>Kontakt oss</h1>
-      <p>Fortell oss kort om hva som skal gjøres og hvor, så tar vi kontakt og avtaler en befaring.</p>
-    </div>
-  </div>
-  <div class="hero-media">
-    <img src="/images/barnehager-oslo-9.jpg" alt="To fagarbeidere fra Oliva Park raker jord på et uteområde under opparbeiding" loading="eager">
-  </div>
-</section>
+{% from "service-hero.njk" import serviceHero %}
+{{ serviceHero("/images/barnehager-oslo-9.jpg", "To fagarbeidere fra Oliva Park raker jord på et uteområde under opparbeiding", "Kontakt", "", "Kontakt oss") }}
 
 <section class="section">
   <div class="wrap contact-grid">
