@@ -1851,3 +1851,33 @@ a.contact-line-link:focus-visible .v { color: var(--orange-text); text-decoratio
 .home-cta-inn { display: flex; justify-content: space-between; align-items: center; gap: 26px; flex-wrap: wrap; }
 .home-cta-inn h2 { font-size: clamp(1.5rem,2.8vw,2.15rem); max-width: 18ch; }
 .home-cta-inn p { margin-top: 12px; color: #6b3229; max-width: 44ch; }
+
+/* ---------- 20. Forside: intro (tekst + bilde, på linje med panelene) ---------- */
+.home-intro { background: var(--bone); padding-block: clamp(28px, 5vw, 64px) clamp(8px, 2vw, 24px); }
+.home-intro-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.home-intro-text h1 { margin: 10px 0 18px; }
+.home-intro-text > p { max-width: 46ch; margin: 0 0 24px; }
+.home-intro .btn-outline { color: var(--forest); border-color: var(--forest); background: transparent; }
+.home-intro .btn-outline:hover { background: var(--forest); color: #fff; }
+.home-chips { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.home-chips a { display: inline-block; padding: 8px 14px; border-radius: 999px; background: #dcecc9; color: var(--forest); font-size: .9rem; text-decoration: none; transition: background .2s; }
+.home-chips li:nth-child(even) a { background: #ffd9c2; }
+.home-chips a:hover { background: var(--forest); color: #fff; }
+.home-intro-media { position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 4 / 4.2; background: var(--forest); }
+.home-intro-media img { width: 100%; height: 100%; object-fit: cover; display: block; animation: home-zoom 18s ease-out both; }
+.home-intro-badge { position: absolute; left: 16px; bottom: 16px; background: #fff; color: var(--forest); padding: 10px 16px; border-radius: 999px; font-size: .9rem; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.15); animation: home-flyt 5s ease-in-out infinite; }
+.home-intro-text > * { animation: home-stig .8s both; }
+.home-intro-text > *:nth-child(2) { animation-delay: .08s; }
+.home-intro-text > *:nth-child(3) { animation-delay: .16s; }
+.home-intro-text > *:nth-child(4) { animation-delay: .24s; }
+.home-intro-text > *:nth-child(5) { animation-delay: .32s; }
+@keyframes home-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+@keyframes home-stig { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes home-flyt { 50% { transform: translateY(-5px); } }
+@media (max-width: 820px) {
+  .home-intro-grid { grid-template-columns: 1fr; }
+  .home-intro-media { aspect-ratio: 4 / 3; order: -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-intro-media img, .home-intro-badge, .home-intro-text > * { animation: none; }
+}
