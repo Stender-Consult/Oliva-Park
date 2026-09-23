@@ -3,10 +3,10 @@ layout: base.njk
 title: Utenomhusarbeider
 permalink: /tjenester/utenomhusarbeider/
 ---
-{% from "service-hero.njk" import serviceHero %}
-{{ serviceHero("/images/utenomhusarbeider.jpg", "Belegningsstein legges på gårdsplass", "Utenomhusarbeider", "01 / 04", "Utenomhusarbeider", "/tjenester/", "Tjenester") }}
-<section class="section">
-  <div class="wrap detail-grid">
+{% from "service-hero.njk" import serviceHero, faglenker, cta %}
+{{ serviceHero("/images/fjordhoyden-15.jpg", "Oransje gangvei med kantstein og frodig beplantning", "Utenomhusarbeider", "01 / 04", "Utenomhus­arbeider", "/tjenester/", "Tjenester", "Uteområder som er fine å se på og gode å bruke, fra hager og gårdsplasser til fellesarealer.") }}
+<section class="h-sek">
+  <div class="wrap detail-grid sub-detalj">
     <div class="detail-copy">
       <p>Vi er en løsningsorientert anleggsgartner med bred erfaring fra både offentlige og private prosjekter. Utenomhusarbeider er kjernen i det vi gjør. Vi tar alt fra hager og gårdsplasser til fellesarealer for borettslag og næringseiendommer, med fokus på kvalitet, funksjonalitet og estetikk i hvert ledd.</p>
       <p>Vi tar gjerne en aktiv rolle i prosjektet og kommer med forslag som sikrer gode, funksjonelle og varige løsninger, tilpasset terrenget, bruken av området og budsjettet.</p>
@@ -25,14 +25,6 @@ permalink: /tjenester/utenomhusarbeider/
       </ul>
     </div>
   </div>
-  <div class="wrap">
-    <div class="other-services">
-      <div class="label">Andre tjenester</div>
-      <div class="other-links">
-        <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
-        <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
-        <a href="/tjenester/riving/">Rivearbeider</a>
-      </div>
-    </div>
-  </div>
 </section>
+{{ faglenker("utenomhusarbeider") }}
+{{ cta() }}

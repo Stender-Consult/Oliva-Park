@@ -3,10 +3,10 @@ layout: base.njk
 title: Grunn- og VA-arbeider
 permalink: /tjenester/grunn-va/
 ---
-{% from "service-hero.njk" import serviceHero %}
-{{ serviceHero("/images/grunn-va.jpg", "Gravemaskin i arbeid med utgraving", "Grunn- og VA-arbeider", "02 / 04", "Grunn- og VA-arbeider", "/tjenester/", "Tjenester") }}
-<section class="section">
-  <div class="wrap detail-grid">
+{% from "service-hero.njk" import serviceHero, faglenker, cta %}
+{{ serviceHero("/images/barnehager-oslo-3.jpg", "Maskinfører fra Oliva Park i gravemaskin", "Grunn- og VA-arbeider", "02 / 04", "Grunn- og VA-arbeider", "/tjenester/", "Tjenester", "Godt grunnarbeid og solide VA-løsninger legger grunnlaget for alt som bygges over.") }}
+<section class="h-sek">
+  <div class="wrap detail-grid sub-detalj">
     <div class="detail-copy">
       <p>Et godt grunnarbeid er avgjørende for et vellykket og varig prosjekt. Vi håndterer hele prosessen fra utgraving og massehåndtering til planering og klargjøring for videre bygging, med kompetanse og arbeidskapasitet som gir god flyt og kontroll på kvaliteten.</p>
       <p>Innen vann og avløp utfører vi nye anlegg, utskifting og rehabilitering av eksisterende ledninger, med løsninger som er driftssikre og tilpasset prosjektets behov.</p>
@@ -26,14 +26,6 @@ permalink: /tjenester/grunn-va/
       </ul>
     </div>
   </div>
-  <div class="wrap">
-    <div class="other-services">
-      <div class="label">Andre tjenester</div>
-      <div class="other-links">
-        <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
-        <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
-        <a href="/tjenester/riving/">Rivearbeider</a>
-      </div>
-    </div>
-  </div>
 </section>
+{{ faglenker("grunn-va") }}
+{{ cta() }}

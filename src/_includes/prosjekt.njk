@@ -1,29 +1,12 @@
 ---
 layout: base.njk
 ---
-<div class="wrap">
-  <div class="breadcrumb prosjekt-breadcrumb"><a href="/">Forside</a> / <a href="/referanser/">Referanser</a> / {{ tittel }}</div>
-  <section class="service-hero">
-    <div class="hero-bg"><img src="{{ bilde }}" alt="{{ tittel }}"></div>
-    <div class="service-hero-content">
-      <h1>{{ tittel }}</h1>
-    </div>
-  </section>
-</div>
-<section class="section">
+{% from "service-hero.njk" import serviceHero, cta %}
+{{ serviceHero(bilde, tittel, tittel, "", tittel, "/referanser/", "Referanser", (kategori | join(", ")) + ", " + sted) }}
+<section class="h-sek">
   <div class="wrap">
     <div class="prosjekt-intro reveal">
       <p class="prosjekt-desc">{{ beskrivelse }}</p>
-      <div class="prosjekt-meta">
-        <div class="prosjekt-meta-item">
-          <span class="prosjekt-meta-label">Kategori</span>
-          <span class="prosjekt-meta-value">{{ kategori | join(", ") }}</span>
-        </div>
-        <div class="prosjekt-meta-item">
-          <span class="prosjekt-meta-label">Sted</span>
-          <span class="prosjekt-meta-value">{{ sted }}</span>
-        </div>
-      </div>
     </div>
     {% if bilder %}
     <div class="service-gallery reveal-group">
@@ -36,25 +19,22 @@ layout: base.njk
     {% endif %}
   </div>
   <div class="wrap">
-    <div class="other-services">
-      <div class="label">Andre prosjekter</div>
-      <div class="ref-grid other-grid">
-        {% for p in collections.prosjekter %}
-        {% if p.data.tittel != tittel %}
-        <a class="ref-card" href="{{ p.url }}">
-          <span class="ref-card-media"><img src="{{ p.data.bilde }}" alt="{{ p.data.tittel }}"></span>
-          <span class="ref-caption">
-            <span class="cat">{{ p.data.kategori | join(", ") }}</span>
-            <span class="title">{{ p.data.tittel }}</span>
-            <span class="loc">{{ p.data.sted }}</span>
-          </span>
-        </a>
-        {% endif %}
-        {% endfor %}
-      </div>
+    <div class="h-head reveal" style="margin-top: clamp(72px, 9vw, 128px);"><h2>Andre prosjekter</h2><p><a class="h-lenke" href="/referanser/">Se alle prosjekter →</a></p></div>
+    <div class="ref-rutenett ref-rutenett-3 reveal-group">
+      {% for p in collections.prosjekter %}{% if p.data.tittel != tittel %}
+      <a class="ref-flis reveal" href="{{ p.url }}">
+        <img src="{{ p.data.bilde }}" alt="{{ p.data.tittel }}" loading="lazy">
+        <span class="ref-flis-tekst">
+          <span class="ref-flis-kat">{{ p.data.kategori | join(", ") }}</span>
+          <h3>{{ p.data.tittel }}</h3>
+          <span class="ref-flis-sted">{{ p.data.sted }}</span>
+        </span>
+      </a>
+      {% endif %}{% endfor %}
     </div>
   </div>
 </section>
+{{ cta() }}
 <div class="lightbox" id="lightbox">
   <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Lukk">&times;</button>
   <button type="button" class="lightbox-nav lightbox-prev" onclick="stepLightbox(-1)" aria-label="Forrige bilde">&#8249;</button>

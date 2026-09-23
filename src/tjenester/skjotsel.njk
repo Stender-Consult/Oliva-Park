@@ -3,10 +3,10 @@ layout: base.njk
 title: Skjøtsel og vedlikehold
 permalink: /tjenester/skjotsel/
 ---
-{% from "service-hero.njk" import serviceHero %}
-{{ serviceHero("/images/skjotsel.jpg", "Ferdig opparbeidet uteområde med gangvei og plen", "Skjøtsel og vedlikehold", "03 / 04", "Skjøtsel og vedlikehold", "/tjenester/", "Tjenester") }}
-<section class="section">
-  <div class="wrap detail-grid">
+{% from "service-hero.njk" import serviceHero, faglenker, cta %}
+{{ serviceHero("/images/fjordhoyden-19.jpg", "Ferdig uteområde med plen, lekehus og beplantning", "Skjøtsel og vedlikehold", "03 / 04", "Skjøtsel og vedlikehold", "/tjenester/", "Tjenester", "Faste avtaler eller enkeltoppdrag, så uteanlegget holder seg fint år etter år.") }}
+<section class="h-sek">
+  <div class="wrap detail-grid sub-detalj">
     <div class="detail-copy">
       <p>Et ferdig uteanlegg trenger stell for å holde seg fint år etter år. Vi tilbyr løpende skjøtsel og vedlikehold, slik at grøntanlegg, plen og beplantning holder seg pent og fungerer godt gjennom hele sesongen.</p>
       <p>Avtaler kan tilpasses den enkelte kunde, fra enkeltoppdrag til faste skjøtselsavtaler for borettslag, næringseiendommer og offentlige uteområder.</p>
@@ -25,14 +25,6 @@ permalink: /tjenester/skjotsel/
       </ul>
     </div>
   </div>
-  <div class="wrap">
-    <div class="other-services">
-      <div class="label">Andre tjenester</div>
-      <div class="other-links">
-        <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
-        <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
-        <a href="/tjenester/riving/">Rivearbeider</a>
-      </div>
-    </div>
-  </div>
 </section>
+{{ faglenker("skjotsel") }}
+{{ cta() }}

@@ -3,38 +3,25 @@ layout: base.njk
 title: Tjenester
 permalink: /tjenester/
 ---
-<section class="page-hero page-hero-blossom">
+{% from "service-hero.njk" import serviceHero, cta %}
+{{ serviceHero("/images/fjordhoyden-10.jpg", "Gangvei i gatestein med plantebed og plen", "Tjenester", "", "Fire fag, ett lag", "", "", "Fagområder som ofte kombineres i samme prosjekt, for private, borettslag, næring og offentlige oppdragsgivere.") }}
+<section class="h-sek">
   <div class="wrap">
-    <div class="breadcrumb"><a href="/">Forside</a> / Tjenester</div>
-    <h1>Tjenester</h1>
-    <p class="lede">Fire fagområder som ofte kombineres i ett og samme prosjekt, for private, næringskunder, borettslag og offentlige oppdragsgivere i Østfold, Akershus og Oslo.</p>
+    <div class="fag-grid fag-grid-2 reveal-group">
+      {% set fag = [
+        ["utenomhusarbeider", "01", "Utenomhusarbeider", "Vi opparbeider uteområder som er fine å se på og gode å bruke, fra hager og gårdsplasser til fellesarealer.", "fjordhoyden-12.jpg"],
+        ["grunn-va", "02", "Grunn- og VA-arbeider", "Godt grunnarbeid og solide VA-løsninger legger grunnlaget for alt som bygges over.", "barnehager-oslo-3.jpg"],
+        ["skjotsel", "03", "Skjøtsel og vedlikehold", "Enkeltoppdrag og faste skjøtselsavtaler, så anlegget holder seg fint år etter år.", "fjordhoyden-19.jpg"],
+        ["riving", "04", "Rivearbeider", "Sikker og ryddig riving, planlagt ut fra konstruksjon, omgivelser og videre bruk.", "barnehager-oslo-4.jpg"]
+      ] %}
+      {% for f in fag %}
+      <a class="fag reveal" href="/tjenester/{{ f[0] }}/">
+        <img src="/images/{{ f[4] }}" alt="" loading="lazy">
+        <span class="fag-tekst"><span class="fag-nr">{{ f[1] }}</span><h3>{{ f[2] }}</h3><span class="fag-desc">{{ f[3] }}</span></span>
+        <span class="fag-pil" aria-hidden="true">→</span>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
-<section class="section">
-  <div class="wrap simple-card-grid">
-    <a class="simple-card simple-card-lg" href="/tjenester/utenomhusarbeider/">
-      <span class="num">01 / 04</span>
-      <h3>Utenomhusarbeider</h3>
-      <p>Vi opparbeider uteområder som er fine å se på og gode å bruke, fra hager og gårdsplasser til fellesarealer for borettslag og næringseiendommer.</p>
-      <ul class="tags"><li>Belegningsstein</li><li>Naturstein</li><li>Støttemurer</li><li>Beplantning</li></ul>
-    </a>
-    <a class="simple-card simple-card-lg" href="/tjenester/grunn-va/">
-      <span class="num">02 / 04</span>
-      <h3>Grunn- og VA-arbeider</h3>
-      <p>Godt grunnarbeid og solide VA-løsninger legger grunnlaget for alt som bygges over, fra utgraving til ferdig klargjort grunn.</p>
-      <ul class="tags"><li>Utgraving</li><li>Drenering</li><li>VA-ledninger</li><li>Kummer</li></ul>
-    </a>
-    <a class="simple-card simple-card-lg" href="/tjenester/skjotsel/">
-      <span class="num">03 / 04</span>
-      <h3>Skjøtsel og vedlikehold</h3>
-      <p>Et ferdig uteanlegg trenger stell for å holde seg fint år etter år. Vi tilbyr enkeltoppdrag og faste skjøtselsavtaler.</p>
-      <ul class="tags"><li>Gressklipping</li><li>Beskjæring</li><li>Snørydding</li></ul>
-    </a>
-    <a class="simple-card simple-card-lg" href="/tjenester/riving/">
-      <span class="num">04 / 04</span>
-      <h3>Rivearbeider</h3>
-      <p>Sikker og ryddig riving, planlagt ut fra konstruksjon, omgivelser og videre bruk av området.</p>
-      <ul class="tags"><li>Bygg</li><li>Betong og mur</li><li>Sortering</li></ul>
-    </a>
-  </div>
-</section>
+{{ cta() }}

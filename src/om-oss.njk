@@ -3,37 +3,32 @@ layout: base.njk
 title: Om oss
 permalink: /om-oss/
 ---
-{% from "service-hero.njk" import serviceHero %}
-{{ serviceHero("/images/om-oss.jpg", "Oliva Park-fagarbeider måler opp ved granittmur, med merket Oliva Park-bil i bakgrunnen", "Om oss", "", "Om Oliva Park") }}
+{% from "service-hero.njk" import serviceHero, cta %}
+{{ serviceHero("/images/barnehager-oslo-10.jpg", "Fagarbeider fra Oliva Park går ned en trapp med utstyr", "Om oss", "", "Om Oliva Park", "", "", "En løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter.") }}
 
-<section class="section">
-  <div class="wrap">
-    <div class="eyebrow">Om oss</div>
-    <h2 style="margin-top: 10px; font-size: clamp(1.7rem, 3.2vw, 2.3rem); font-weight: 650; max-width: 20ch;">Vi skaper vakre uterom</h2>
-    <p style="margin-top: 18px; color: var(--ink-soft); font-size: 1.1rem; max-width: 62ch;">Vi er en løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter. Vi ser potensialet i hvert prosjekt og bidrar med kunnskap og gode løsninger som løfter sluttresultatet. Det vi leverer skal ikke bare se bra ut, det skal skape verdi for de som bruker området.</p>
-  </div>
-</section>
-
-<section class="section section-blossom">
-  <div class="wrap detail-grid">
-    <div class="detail-media"><img src="/images/prosjekt-1.jpg" alt="Fagarbeider legger natursteinsheller mellom beplantning"></div>
-    <div class="detail-copy">
-      <div class="eyebrow">Fra grunn til grønt</div>
-      <h2 style="margin-top: 10px; font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 650;">Fra grunnarbeid til ferdig grøntanlegg</h2>
-      <p style="margin-top: 14px;">Med kompetanse innen både grunnarbeid og parkarbeid følger vi gjerne prosjektet hele veien fra grunn til ferdig uterom. Det gir god flyt, færre grensesnitt og kontroll på kvaliteten underveis.</p>
-      <p style="margin-top: 14px;">Vi har en tydelig grønn profil og et sterkt engasjement for park- og grøntanlegg, og ambisjonen er å levere uterom som fungerer i dag og utvikler seg godt over tid.</p>
+<section class="h-sek">
+  <div class="wrap h-omoss">
+    <figure class="h-omoss-bilde reveal">
+      <img src="/images/barnehager-oslo-1.jpg" alt="Smilende maskinfører fra Oliva Park i gravemaskinen" loading="lazy">
+    </figure>
+    <div class="h-omoss-tekst reveal">
+      <h2>Vi skaper vakre uterom</h2>
+      <p>Vi ser potensialet i hvert prosjekt og bidrar med kunnskap og gode løsninger som løfter sluttresultatet. Det vi leverer skal ikke bare se bra ut, det skal skape verdi for de som bruker området.</p>
     </div>
   </div>
 </section>
 
-<section class="section-tight">
-  <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h2>Østfold, Akershus og Oslo</h2>
-        <p>Vi tar oppdrag for private, borettslag, næringseiendommer og offentlige oppdragsgivere i disse fylkene.</p>
-      </div>
-      <a class="btn" href="/kontakt/">Be om befaring</a>
+<section class="h-sek">
+  <div class="wrap h-omoss h-omoss-snudd">
+    <figure class="h-omoss-bilde reveal">
+      <img src="/images/fjordhoyden-13.jpg" alt="Frodig beplantning langs gatestein i boligområde" loading="lazy">
+    </figure>
+    <div class="h-omoss-tekst reveal">
+      <h2>Fra grunnarbeid til ferdig grøntanlegg</h2>
+      <p>Med kompetanse innen både grunnarbeid og parkarbeid følger vi gjerne prosjektet hele veien. Det gir god flyt, færre grensesnitt og kontroll på kvaliteten underveis.</p>
+      <p>Vi har en tydelig grønn profil og et sterkt engasjement for park- og grøntanlegg. Ambisjonen er uterom som fungerer i dag og utvikler seg godt over tid.</p>
     </div>
   </div>
 </section>
+
+{{ cta("Østfold, Akershus og Oslo", "Vi tar oppdrag for private, borettslag, næringseiendommer og offentlige oppdragsgivere i disse fylkene.", "gront-staude.jpg") }}

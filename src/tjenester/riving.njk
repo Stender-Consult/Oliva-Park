@@ -3,10 +3,10 @@ layout: base.njk
 title: Rivearbeider
 permalink: /tjenester/riving/
 ---
-{% from "service-hero.njk" import serviceHero %}
-{{ serviceHero("/images/riving.jpg", "Fagarbeider fra Oliva Park i arbeid på anleggsplass", "Rivearbeider", "04 / 04", "Rivearbeider", "/tjenester/", "Tjenester") }}
-<section class="section">
-  <div class="wrap detail-grid">
+{% from "service-hero.njk" import serviceHero, faglenker, cta %}
+{{ serviceHero("/images/barnehager-oslo-4.jpg", "Gravemaskin i arbeid foran bygg", "Rivearbeider", "04 / 04", "Rivearbeider", "/tjenester/", "Tjenester", "Sikker og ryddig riving, planlagt ut fra konstruksjon, omgivelser og videre bruk.") }}
+<section class="h-sek">
+  <div class="wrap detail-grid sub-detalj">
     <div class="detail-copy">
       <p>Vi utfører mindre og mellomstore riveoppdrag med fokus på sikker, ryddig og effektiv gjennomføring. Rivearbeidet planlegges ut fra konstruksjon, omgivelser og videre bruk av området.</p>
       <p>Ved behov kan vi også stå for sortering og bortkjøring av rivemasser, samt klargjøring av tomten for nye bygge- eller anleggsarbeider.</p>
@@ -24,14 +24,6 @@ permalink: /tjenester/riving/
       </ul>
     </div>
   </div>
-  <div class="wrap">
-    <div class="other-services">
-      <div class="label">Andre tjenester</div>
-      <div class="other-links">
-        <a href="/tjenester/utenomhusarbeider/">Utenomhusarbeider</a>
-        <a href="/tjenester/grunn-va/">Grunn- og VA-arbeider</a>
-        <a href="/tjenester/skjotsel/">Skjøtsel og vedlikehold</a>
-      </div>
-    </div>
-  </div>
 </section>
+{{ faglenker("riving") }}
+{{ cta() }}

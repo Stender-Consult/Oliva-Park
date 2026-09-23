@@ -1,16 +1,58 @@
-{% macro serviceHero(img, alt, crumb, num, title, crumbHref, crumbLabel) %}
-<div class="wrap">
-  <section class="service-hero">
-    <div class="hero-bg"><img src="{{ img }}" alt="{{ alt }}"></div>
-    <div class="service-hero-content">
-      <div class="breadcrumb">
-        <a href="/">Forside</a>
-        {% if crumbHref %} / <a href="{{ crumbHref }}">{{ crumbLabel }}</a>{% endif %}
-        / {{ crumb }}
+{% macro serviceHero(img, alt, crumb, num, title, crumbHref, crumbLabel, lede) %}
+<section class="home-bento-sek">
+  <div class="wrap sub-topp">
+    <div class="sub-topp-tekst">
+      <div class="sub-sti">
+        <a href="/">Forside</a>{% if crumbHref %} / <a href="{{ crumbHref }}">{{ crumbLabel }}</a>{% endif %} / <span>{{ crumb }}</span>
       </div>
-      {% if num %}<span class="service-tag-num">{{ num }}</span>{% endif %}
-      <h1>{{ title }}</h1>
+      <div class="sub-topp-kjerne">
+        {% if num %}<span class="fag-nr sub-nr">{{ num }}</span>{% endif %}
+        <h1>{{ title }}</h1>
+        {% if lede %}<p>{{ lede }}</p>{% endif %}
+      </div>
     </div>
-  </section>
-</div>
+    <figure class="sub-topp-bilde"><img src="{{ img }}" alt="{{ alt }}" loading="eager"></figure>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro faglenker(skip) %}
+<section class="h-sek">
+  <div class="wrap">
+    <div class="h-head reveal">
+      <h2>Andre fagområder</h2>
+      <p>Fagene henger sammen. Vi kan ta hele jobben, eller bare den delen du trenger.</p>
+    </div>
+    <div class="fag-grid fag-grid-3 reveal-group">
+      {% set fag = [
+        ["utenomhusarbeider", "01", "Utenomhusarbeider", "Stein, murer, trapper og beplantning.", "fjordhoyden-12.jpg"],
+        ["grunn-va", "02", "Grunn- og VA-arbeider", "Utgraving, drenering og VA-ledninger.", "barnehager-oslo-3.jpg"],
+        ["skjotsel", "03", "Skjøtsel og vedlikehold", "Klipp, beskjæring og snørydding.", "fjordhoyden-19.jpg"],
+        ["riving", "04", "Rivearbeider", "Riving, sortering og ryddig tomt.", "barnehager-oslo-4.jpg"]
+      ] %}
+      {% for f in fag %}{% if f[0] != skip %}
+      <a class="fag reveal" href="/tjenester/{{ f[0] }}/">
+        <img src="/images/{{ f[4] }}" alt="" loading="lazy">
+        <span class="fag-tekst"><span class="fag-nr">{{ f[1] }}</span><h3>{{ f[2] }}</h3><span class="fag-desc">{{ f[3] }}</span></span>
+        <span class="fag-pil" aria-hidden="true">→</span>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro cta(tittel, tekst, bilde) %}
+<section class="h-sek h-sek-siste">
+  <div class="wrap">
+    <div class="h-cta reveal">
+      <div class="h-cta-tekst">
+        <h2>{{ tittel or "Har du et uterom som skal bli noe?" }}</h2>
+        <p>{{ tekst or "Vi tar oppdrag for private, borettslag, næring og offentlige byggherrer. Befaringen er uforpliktende." }}</p>
+        <a class="btn" href="/kontakt/">Be om befaring</a>
+      </div>
+      <figure class="h-cta-bilde"><img src="/images/{{ bilde or 'gront-blomsterbed.jpg' }}" alt="" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
 {% endmacro %}
