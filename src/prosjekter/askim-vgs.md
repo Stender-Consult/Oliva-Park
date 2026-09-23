@@ -6,7 +6,7 @@ kategori:
   - Utenomhusarbeider
 sted: Østfold
 dato: 2026-12-01
-bilde: /images/askim-vgs-1.jpg
+bilde: /images/askim-vgs-6.jpg
 beskrivelse: På Askim Videregående har vi utført alt fra grunnarbeider, VA og utenomhusarbeider, inkludert LARK-prosjektering. Prosjektet er pågående og forventet ferdigstilt desember 2026.
 bilder:
   - /images/askim-vgs-1.jpg

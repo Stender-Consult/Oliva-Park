@@ -12,136 +12,107 @@ title: Forside
         <a class="btn-outline" href="/referanser/">Se prosjekter</a>
       </div>
     </div>
-    <figure class="bento-bilde bento-a"><img src="/images/fjordhoyden-13.jpg" alt="Frodig beplantning langs gatestein i boligområde" loading="eager"></figure>
+    <figure class="bento-bilde bento-a">
+      <img src="/images/fjordhoyden-13.jpg" alt="Frodig beplantning langs gatestein i boligområde" loading="eager">
+      <figcaption>Fjordhøyden, Akershus</figcaption>
+    </figure>
     <figure class="bento-bilde bento-b"><img src="/images/barnehager-oslo-11.jpg" alt="Fagarbeider fra Oliva Park på byggeplass" loading="eager"></figure>
     <figure class="bento-bilde bento-c"><img src="/images/gront-staude.jpg" alt="Oransje gangvei med kantstein og stauder" loading="eager"></figure>
   </div>
 </section>
-<section class="section home-sek">
+
+<section class="h-sek">
   <div class="wrap">
-    <div class="home-panel home-panel-blush">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Fagområder</div>
-            <h2>Fire fag som møtes i samme prosjekt</h2>
-          </div>
-          <a class="see-all" href="/tjenester/">Alle tjenester →</a>
-        </div>
-        <div class="fag-kort-rad reveal-group">
-          <a class="fag-kort reveal" href="/tjenester/utenomhusarbeider/">
-            <span class="fag-kort-bilde"><img src="/images/fjordhoyden-12.jpg" alt="" loading="lazy"></span>
-            <span class="fag-kort-tekst"><h3>Utenomhusarbeider</h3><span>Stein, murer, trapper og beplantning.</span></span>
-          </a>
-          <a class="fag-kort reveal" href="/tjenester/grunn-va/">
-            <span class="fag-kort-bilde"><img src="/images/barnehager-oslo-2.jpg" alt="" loading="lazy"></span>
-            <span class="fag-kort-tekst"><h3>Grunn- og VA-arbeider</h3><span>Utgraving, drenering og VA-ledninger.</span></span>
-          </a>
-          <a class="fag-kort reveal" href="/tjenester/skjotsel/">
-            <span class="fag-kort-bilde"><img src="/images/fjordhoyden-1.jpg" alt="" loading="lazy"></span>
-            <span class="fag-kort-tekst"><h3>Skjøtsel og vedlikehold</h3><span>Klipp, beskjæring og snørydding.</span></span>
-          </a>
-          <a class="fag-kort reveal" href="/tjenester/riving/">
-            <span class="fag-kort-bilde"><img src="/images/riving.jpg" alt="" loading="lazy"></span>
-            <span class="fag-kort-tekst"><h3>Rivearbeider</h3><span>Riving, sortering og ryddig tomt.</span></span>
-          </a>
-        </div>
-      </div>
+    <div class="h-head reveal">
+      <h2>Fire fag, ett lag</h2>
+      <p>Vi tar hele jobben selv, fra første spadetak til siste staude. Det gir færre grensesnitt, bedre flyt og kontroll på kvaliteten.</p>
+    </div>
+    <div class="fag-grid reveal-group">
+      <a class="fag reveal" href="/tjenester/utenomhusarbeider/">
+        <img src="/images/fjordhoyden-12.jpg" alt="" loading="lazy">
+        <span class="fag-tekst"><span class="fag-nr">01</span><h3>Utenomhusarbeider</h3><span class="fag-desc">Stein, murer, trapper og beplantning.</span></span>
+        <span class="fag-pil" aria-hidden="true">→</span>
+      </a>
+      <a class="fag reveal" href="/tjenester/grunn-va/">
+        <img src="/images/grunn-va.jpg" alt="" loading="lazy">
+        <span class="fag-tekst"><span class="fag-nr">02</span><h3>Grunn- og VA-arbeider</h3><span class="fag-desc">Utgraving, drenering og VA-ledninger.</span></span>
+        <span class="fag-pil" aria-hidden="true">→</span>
+      </a>
+      <a class="fag reveal" href="/tjenester/skjotsel/">
+        <img src="/images/fjordhoyden-19.jpg" alt="" loading="lazy">
+        <span class="fag-tekst"><span class="fag-nr">03</span><h3>Skjøtsel og vedlikehold</h3><span class="fag-desc">Klipp, beskjæring og snørydding.</span></span>
+        <span class="fag-pil" aria-hidden="true">→</span>
+      </a>
+      <a class="fag reveal" href="/tjenester/riving/">
+        <img src="/images/barnehager-oslo-2.jpg" alt="" loading="lazy">
+        <span class="fag-tekst"><span class="fag-nr">04</span><h3>Rivearbeider</h3><span class="fag-desc">Riving, sortering og ryddig tomt.</span></span>
+        <span class="fag-pil" aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="section home-sek">
+<section class="h-sek">
   <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Referanser</h2>
-      <a class="see-all" href="/referanser/">Se flere prosjekter →</a>
+    <div class="h-head reveal">
+      <h2>Utvalgte prosjekter</h2>
+      <p>Skoler, barnehager, boligområder og parker i Østfold, Akershus og Oslo. <a class="h-lenke" href="/referanser/">Se alle prosjekter →</a></p>
     </div>
-    {% for prosjekt in collections.prosjekter %}
-    {% if loop.index == 1 %}
-    <a class="ref-feature reveal" href="{{ prosjekt.url }}">
-      <span class="ref-feature-media"><img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}"></span>
-      <span class="ref-feature-body">
-        <span>
-          <span class="cat">{{ prosjekt.data.kategori | join(", ") }}</span>
+    <div class="ref-mosaikk reveal-group">
+      {% for prosjekt in collections.prosjekter %}{% if loop.index <= 3 %}
+      <a class="ref-flis reveal" href="{{ prosjekt.url }}">
+        <img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}" loading="lazy">
+        <span class="ref-flis-tekst">
+          <span class="ref-flis-kat">{{ prosjekt.data.kategori | join(", ") }}</span>
           <h3>{{ prosjekt.data.tittel }}</h3>
-          <span class="loc">{{ prosjekt.data.sted }}</span>
-        </span>
-        <span class="go-text">Se prosjektet →</span>
-      </span>
-    </a>
-    {% endif %}
-    {% endfor %}
-    <div class="ref-grid reveal-group">
-      {% for prosjekt in collections.prosjekter %}
-      {% if loop.index > 1 and loop.index <= 4 %}
-      <a class="ref-card reveal" href="{{ prosjekt.url }}">
-        <span class="ref-card-media"><img src="{{ prosjekt.data.bilde }}" alt="{{ prosjekt.data.tittel }}"></span>
-        <span class="ref-caption">
-          <span class="cat">{{ prosjekt.data.kategori | join(", ") }}</span>
-          <span class="title">{{ prosjekt.data.tittel }}</span>
-          <span class="loc">{{ prosjekt.data.sted }}</span>
+          <span class="ref-flis-sted">{{ prosjekt.data.sted }}</span>
         </span>
       </a>
-      {% endif %}
-      {% endfor %}
+      {% endif %}{% endfor %}
     </div>
   </div>
 </section>
 
-<section class="section home-sek">
-  <div class="wrap">
-    <div class="home-panel home-panel-mint">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Om oss</div>
-            <h2>Samme folk fra grunn til grønt</h2>
-          </div>
-          <a class="see-all" href="/om-oss/">Mer om oss →</a>
-        </div>
-        <div class="home-omoss-grid">
-          <div>
-            <p>Vi er en løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter. Vi ser potensialet i hvert prosjekt og bidrar med kunnskap og løsninger som løfter sluttresultatet.</p>
-            <p>Med kompetanse og kapasitet innen både grunnarbeid og parkarbeid følger vi prosjektet hele veien. Det gir god flyt, færre grensesnitt og kontroll på kvaliteten underveis.</p>
-          </div>
-          <figure class="home-omoss-bilde">
-            <img src="/images/gront-beplantning.jpg" alt="Ferdig plen med staudebed og lavendel rundt lekeareal" loading="lazy">
-          </figure>
-        </div>
-      </div>
+<section class="h-sek">
+  <div class="wrap h-omoss">
+    <figure class="h-omoss-bilde reveal">
+      <img src="/images/hero-arbeid.jpg" alt="Fagarbeider fra Oliva Park raker ut masse ved sjøen" loading="lazy">
+    </figure>
+    <div class="h-omoss-tekst reveal">
+      <h2>Samme folk fra grunn til grønt</h2>
+      <p>Vi er en løsningsorientert anleggsgartner med bred erfaring fra offentlige og private prosjekter. Vi ser potensialet i hvert prosjekt og bidrar med kunnskap og løsninger som løfter sluttresultatet.</p>
+      <p>Med kompetanse og kapasitet innen både grunnarbeid og parkarbeid følger vi prosjektet hele veien.</p>
+      <a class="btn-outline" href="/om-oss/">Mer om oss</a>
     </div>
   </div>
 </section>
 
-<section class="section home-sek">
+<section class="h-sek">
   <div class="wrap">
     <div class="home-panel home-panel-dark reveal">
       <div class="wrap">
-        <div class="eyebrow eyebrow-on-dark">Slik jobber vi</div>
-        <h2 style="margin-top: 10px; max-width: 20ch;">Fra første befaring til ferdig overlevering</h2>
+        <h2 class="h-trinn-tittel">Fra første befaring til ferdig overlevering</h2>
         <div class="home-trinn-rad">
           <div class="home-spirelinje" aria-hidden="true"><i></i></div>
-          <div class="home-trinn"><b>Befaring</b><p>Vi møter deg på stedet, kartlegger behov og gir et uforpliktende tilbud.</p></div>
-          <div class="home-trinn"><b>Planlegging</b><p>Løsning, materialvalg og fremdrift legges sammen med deg.</p></div>
-          <div class="home-trinn"><b>Utførelse</b><p>Egne fagfolk og egne maskiner gjennom hele anlegget.</p></div>
-          <div class="home-trinn"><b>Overlevering</b><p>Vi går gjennom resultatet sammen før vi avslutter.</p></div>
+          <div class="home-trinn"><span class="trinn-nr">01</span><b>Befaring</b><p>Vi møter deg på stedet, kartlegger behov og gir et uforpliktende tilbud.</p></div>
+          <div class="home-trinn"><span class="trinn-nr">02</span><b>Planlegging</b><p>Løsning, materialvalg og fremdrift legges sammen med deg.</p></div>
+          <div class="home-trinn"><span class="trinn-nr">03</span><b>Utførelse</b><p>Egne fagfolk og egne maskiner gjennom hele anlegget.</p></div>
+          <div class="home-trinn"><span class="trinn-nr">04</span><b>Overlevering</b><p>Vi går gjennom resultatet sammen før vi avslutter.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section home-sek">
+<section class="h-sek h-sek-siste">
   <div class="wrap">
-    <div class="home-panel home-panel-blush">
-      <div class="wrap home-cta-inn">
-        <div>
-          <h2>Har du et uterom som skal bli noe?</h2>
-          <p>Vi tar oppdrag i Østfold, Akershus og Oslo, for private, borettslag, næring og offentlige byggherrer.</p>
-        </div>
+    <div class="h-cta reveal">
+      <div class="h-cta-tekst">
+        <h2>Har du et uterom som skal bli noe?</h2>
+        <p>Vi tar oppdrag for private, borettslag, næring og offentlige byggherrer. Befaringen er uforpliktende.</p>
         <a class="btn" href="/kontakt/">Be om befaring</a>
       </div>
+      <figure class="h-cta-bilde"><img src="/images/gront-blomsterbed.jpg" alt="Frodig blomsterbed med stauder" loading="lazy"></figure>
     </div>
   </div>
 </section>
