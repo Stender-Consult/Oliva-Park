@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Stender-Consult/Oliva-Park
   branch: main
+  # MIDLERTIDIG PLASSHOLDER. Bytt ut med den faktiske Worker-adressen
+  # fra oauth-worker/README.md steg 2, uten "/callback" pa slutten.
+  base_url: https://oliva-park-cms-auth.oliva-park.workers.dev
+  auth_endpoint: auth
 
 media_folder: "src/images"
 public_folder: "/images"
