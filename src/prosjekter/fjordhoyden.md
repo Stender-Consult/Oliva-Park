@@ -7,7 +7,7 @@ kategori:
   - Rivearbeider
 sted: Akershus
 dato: 2026-09-15
-bilde: /images/fjordhoyden-1.jpg
+bilde: /images/fjordhoyden-13.jpg
 beskrivelse: Fjordhøyden på Fagerstrand/Nesodden er et av flere typiske utbyggingsprosjekter vi har utført og utfører. Her har vi gjennomført grunn- og utenomhusarbeider, VA-arbeider og riving av eksisterende boliger, inkludert prosjektering LARK.
 bilder:
   - /images/fjordhoyden-1.jpg

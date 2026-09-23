@@ -6,7 +6,7 @@ kategori:
   - Utenomhusarbeider
 sted: Oslo
 dato: 2026-07-01
-bilde: /images/barnehager-oslo-1.jpg
+bilde: /images/barnehager-oslo-12.jpg
 beskrivelse: To kommunale barnehager i Oslo, liggende ved siden av hverandre, ferdigstilt sommeren 2026. Vi utførte grunnarbeider, utvendig betongarbeider og utenomhusarbeider.
 bilder:
   - /images/barnehager-oslo-1.jpg

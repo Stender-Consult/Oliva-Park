@@ -2060,3 +2060,7 @@ nav.links a.nav-link::after { background: var(--orange); }
 @media (max-width: 860px) { .nav-cta { display: none; } }
 .h-cta-bilde img { object-position: center 85%; }
 .ref-flis::after { background: linear-gradient(to top, rgba(20,40,24,.85) 0%, rgba(20,40,24,.35) 40%, rgba(20,40,24,0) 65%); }
+/* Bildeutsnitt: hold ansikter og himmel i bildet */
+.bento-a img { object-position: center 60%; }
+.bento-b img { object-position: 78% 20%; }
+.h-omoss-bilde img { object-position: center 35%; }
