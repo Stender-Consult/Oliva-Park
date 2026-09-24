@@ -2186,3 +2186,4 @@ nav.links a.nav-link::after { background: var(--orange); }
   .contact-aside { padding-left: 0; border-left: 0; border-top: 1px solid rgba(36,81,47,.14); padding-top: 32px; }
 }
 @media (max-width: 560px) { .form-to { grid-template-columns: 1fr; } .contact-form .kontakt-send { align-self: stretch; } }
+.contact-aside .contact-line:first-child { padding-top: 0; }
