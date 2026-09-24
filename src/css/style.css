@@ -2187,3 +2187,6 @@ nav.links a.nav-link::after { background: var(--orange); }
 }
 @media (max-width: 560px) { .form-to { grid-template-columns: 1fr; } .contact-form .kontakt-send { align-self: stretch; } }
 .contact-aside .contact-line:first-child { padding-top: 0; }
+.kontakt-kart { margin-top: 24px; border-radius: 28px; overflow: hidden; aspect-ratio: 4 / 3; background: #dcecc9; }
+.kontakt-kart iframe { width: 100%; height: 100%; border: 0; display: block; }
+.contact-aside a.kontakt-adresse .v { font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }

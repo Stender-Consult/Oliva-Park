@@ -4,13 +4,13 @@ title: Kontakt
 permalink: /kontakt/
 ---
 {% from "service-hero.njk" import serviceHero %}
-{{ serviceHero("/images/barnehager-oslo-9.jpg", "To fagarbeidere fra Oliva Park raker jord på et uteområde", "Kontakt", "", "Kontakt oss", "", "", "Fortell oss om prosjektet, så tar vi kontakt og avtaler en uforpliktende befaring.") }}
+{{ serviceHero("/images/barnehager-oslo-9.jpg", "To fagarbeidere fra Oliva Park raker jord på et uteområde", "Kontakt", "", "Kontakt oss", "", "", "Spørsmål, befaring eller et nytt prosjekt? Send oss en melding, så tar vi kontakt.") }}
 
 <section class="h-sek h-sek-siste kontakt-sek">
   <div class="wrap contact-grid">
     <div class="contact-main kontakt-kort">
-      <h2>Be om befaring</h2>
-      <p>Jo mer du forteller om omfang, sted og ønsket tidspunkt, jo bedre kan vi forberede oss før vi møtes.</p>
+      <h2>Send oss en melding</h2>
+      <p>Fortell kort hva du trenger hjelp med, så tar vi kontakt så snart vi kan.</p>
       <form class="contact-form" id="contactForm" novalidate>
         <div class="form-to">
           <div class="form-row">
@@ -31,15 +31,16 @@ permalink: /kontakt/
             <label><input type="checkbox" name="fag" value="Grunn- og VA-arbeider"><span>Grunn- og VA-arbeider</span></label>
             <label><input type="checkbox" name="fag" value="Skjøtsel og vedlikehold"><span>Skjøtsel og vedlikehold</span></label>
             <label><input type="checkbox" name="fag" value="Rivearbeider"><span>Rivearbeider</span></label>
+            <label><input type="checkbox" name="fag" value="Annet"><span>Annet</span></label>
           </div>
         </fieldset>
         <div class="form-row">
-          <label for="cf-message">Om prosjektet</label>
+          <label for="cf-message">Melding</label>
           <textarea id="cf-message" name="message" required aria-describedby="hint-message err-message"></textarea>
-          <span class="form-hint" id="hint-message">For eksempel: type arbeid, adresse eller sted, omtrentlig størrelse, og når det passer.</span>
-          <span class="form-error" id="err-message" hidden>Skriv noen ord om prosjektet.</span>
+          <span class="form-hint" id="hint-message">Gjelder det et prosjekt, er det fint med sted, omtrentlig størrelse og når det passer.</span>
+          <span class="form-error" id="err-message" hidden>Skriv noen ord om hva det gjelder.</span>
         </div>
-        <button type="submit" class="btn kontakt-send">Send forespørsel</button>
+        <button type="submit" class="btn kontakt-send">Send melding</button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
@@ -50,10 +51,13 @@ permalink: /kontakt/
           <span class="k">E-post</span>
           <span class="v">post@oliva-park.no</span>
         </a>
-        <div class="contact-line">
-          <span class="k">Vi tar oppdrag i</span>
-          <span class="v">Østfold, Akershus og Oslo</span>
-        </div>
+        <a class="contact-line contact-line-link kontakt-adresse" href="https://www.google.com/maps/search/?api=1&query=Tr%C3%B8skenveien+36%2C+1712+Gr%C3%A5lum" target="_blank" rel="noopener">
+          <span class="k">Adresse</span>
+          <span class="v">Trøskenveien 36, 1712 Grålum</span>
+        </a>
+      </div>
+      <div class="kontakt-kart">
+        <iframe title="Kart som viser Trøskenveien 36, 1712 Grålum" src="https://maps.google.com/maps?q=Tr%C3%B8skenveien%2036%2C%201712%20Gr%C3%A5lum&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </aside>
   </div>
