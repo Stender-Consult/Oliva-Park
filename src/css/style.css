@@ -2203,3 +2203,4 @@ nav.links a.nav-link::after { background: var(--orange); }
 .kontakt-kart .leaflet-tile-pane { filter: grayscale(.75) sepia(.35) hue-rotate(45deg) saturate(1.3) brightness(1.06) contrast(.9); }
 .bento-a img { object-position: center 70%; } .bento-c img { object-position: 45% 45%; }
 .h-cta-bilde img { object-position: center 50%; }
+.bento-a img { object-position: center 55%; }
