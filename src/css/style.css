@@ -2138,3 +2138,5 @@ nav.links a.nav-link::after { background: var(--orange); }
 .ref-rutenett .ref-flis:first-child { grid-row: auto; grid-column: auto; }
 .ref-rutenett .ref-flis:first-child .ref-flis-tekst h3 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
 .sub-topp h1 { hyphens: manual; -webkit-hyphens: manual; }
+/* Uten dekorsirkel: rolig mint flate */
+.bento-tekst::before, .sub-topp-tekst::before { display: none; }
