@@ -6,35 +6,46 @@ permalink: /kontakt/
 {% from "service-hero.njk" import serviceHero %}
 {{ serviceHero("/images/barnehager-oslo-9.jpg", "To fagarbeidere fra Oliva Park raker jord på et uteområde", "Kontakt", "", "Kontakt oss", "", "", "Fortell oss om prosjektet, så tar vi kontakt og avtaler en uforpliktende befaring.") }}
 
-<section class="h-sek h-sek-siste">
+<section class="h-sek h-sek-siste kontakt-sek">
   <div class="wrap contact-grid">
-    <div class="contact-main">
+    <div class="contact-main kontakt-kort">
       <h2>Be om befaring</h2>
-      <p>Jo mer du får med om omfang, sted og ønsket tidspunkt, jo bedre kan vi forberede oss før vi møtes.</p>
+      <p>Jo mer du forteller om omfang, sted og ønsket tidspunkt, jo bedre kan vi forberede oss før vi møtes.</p>
       <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-row">
-          <label for="cf-name">Navn</label>
-          <input type="text" id="cf-name" name="name" autocomplete="name" required aria-describedby="err-name">
-          <span class="form-error" id="err-name" hidden>Skriv inn navnet ditt.</span>
+        <div class="form-to">
+          <div class="form-row">
+            <label for="cf-name">Navn</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required aria-describedby="err-name">
+            <span class="form-error" id="err-name" hidden>Skriv inn navnet ditt.</span>
+          </div>
+          <div class="form-row">
+            <label for="cf-email">E-post</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required aria-describedby="err-email">
+            <span class="form-error" id="err-email" hidden>Skriv inn en gyldig e-postadresse.</span>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="cf-email">E-post</label>
-          <input type="email" id="cf-email" name="email" autocomplete="email" required aria-describedby="err-email">
-          <span class="form-error" id="err-email" hidden>Skriv inn en gyldig e-postadresse.</span>
-        </div>
+        <fieldset class="form-row form-valg">
+          <legend>Hva gjelder det? <span class="valgfritt">Valgfritt</span></legend>
+          <div class="valg-rad">
+            <label><input type="checkbox" name="fag" value="Utenomhusarbeider"><span>Utenomhusarbeider</span></label>
+            <label><input type="checkbox" name="fag" value="Grunn- og VA-arbeider"><span>Grunn- og VA-arbeider</span></label>
+            <label><input type="checkbox" name="fag" value="Skjøtsel og vedlikehold"><span>Skjøtsel og vedlikehold</span></label>
+            <label><input type="checkbox" name="fag" value="Rivearbeider"><span>Rivearbeider</span></label>
+          </div>
+        </fieldset>
         <div class="form-row">
           <label for="cf-message">Om prosjektet</label>
           <textarea id="cf-message" name="message" required aria-describedby="hint-message err-message"></textarea>
           <span class="form-hint" id="hint-message">For eksempel: type arbeid, adresse eller sted, omtrentlig størrelse, og når det passer.</span>
           <span class="form-error" id="err-message" hidden>Skriv noen ord om prosjektet.</span>
         </div>
-        <button type="submit" class="btn">Send via e-post</button>
+        <button type="submit" class="btn kontakt-send">Send forespørsel</button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
 
     <aside class="contact-aside">
-      <div class="contact-card">
+      <div class="contact-card kontakt-direkte">
         <h3>Direkte</h3>
         <div class="contact-lines">
           <a class="contact-line contact-line-link" href="mailto:post@oliva-park.no">
@@ -52,7 +63,7 @@ permalink: /kontakt/
         </div>
       </div>
 
-      <div class="contact-card contact-card--leaf">
+      <div class="contact-card contact-card--leaf kontakt-videre">
         <h3>Hva skjer videre</h3>
         <ol class="next-steps">
           <li>
@@ -114,7 +125,8 @@ permalink: /kontakt/
         return;
       }
 
-      var body = 'Navn: ' + form.name.value.trim() + '\nE-post: ' + form.email.value.trim() + '\n\n' + form.message.value.trim();
+      var fag = Array.prototype.filter.call(form.querySelectorAll('input[name="fag"]'), function (c) { return c.checked; }).map(function (c) { return c.value; });
+      var body = 'Navn: ' + form.name.value.trim() + '\nE-post: ' + form.email.value.trim() + (fag.length ? '\nGjelder: ' + fag.join(', ') : '') + '\n\n' + form.message.value.trim();
       status.hidden = false;
       status.className = 'form-status is-ok';
       status.textContent = 'Åpner e-postprogrammet ditt med meldingen klar. Får du ikke opp noe, send til post@oliva-park.no.';

@@ -2140,3 +2140,44 @@ nav.links a.nav-link::after { background: var(--orange); }
 .sub-topp h1 { hyphens: manual; -webkit-hyphens: manual; }
 /* Uten dekorsirkel: rolig mint flate */
 .bento-tekst::before, .sub-topp-tekst::before { display: none; }
+
+/* ---------- 27. Kontakt ---------- */
+.contact-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr); gap: 14px; align-items: stretch; }
+.kontakt-kort { background: #fff; border-radius: 28px; padding: clamp(26px, 4.5vw, 56px); }
+.kontakt-kort > p { color: #4a5a48; margin-top: 12px; line-height: 1.6; }
+.kontakt-kort .contact-form { gap: 22px; margin-top: 32px; }
+.form-to { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.kontakt-kort .form-row label, .form-valg legend { font-family: var(--sans); font-size: .9rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--forest); }
+.kontakt-kort .form-row input, .kontakt-kort .form-row textarea { background: var(--bone); border: 1.5px solid rgba(36,81,47,.14); border-radius: 14px; padding: 14px 16px; font-size: 1rem; transition: border-color .2s, box-shadow .2s, background .2s; }
+.kontakt-kort .form-row input:focus, .kontakt-kort .form-row textarea:focus { outline: none; background: #fff; border-color: var(--forest); box-shadow: 0 0 0 4px #dcecc9; }
+.kontakt-kort .form-row textarea { min-height: 160px; }
+.form-valg { border: 0; padding: 0; margin: 0; min-width: 0; }
+.form-valg legend { padding: 0; margin-bottom: 10px; }
+.valgfritt { font-weight: 400; color: #6b7a68; margin-left: 6px; }
+.valg-rad { display: flex; flex-wrap: wrap; gap: 8px; }
+.valg-rad label { cursor: pointer; }
+.valg-rad input { position: absolute; opacity: 0; pointer-events: none; }
+.valg-rad span { display: inline-block; padding: 10px 16px; border-radius: 999px; background: var(--bone); border: 1.5px solid rgba(36,81,47,.14); color: var(--forest); font-size: .92rem; font-weight: 500; transition: background .2s, border-color .2s; }
+.valg-rad label:hover span { border-color: var(--forest); }
+.valg-rad input:checked + span { background: #dcecc9; border-color: var(--forest); }
+.valg-rad input:checked + span::before { content: "✓ "; }
+.valg-rad input:focus-visible + span { box-shadow: 0 0 0 4px #dcecc9; }
+.kontakt-send { align-self: flex-start; padding: 15px 32px; font-size: 1rem; }
+
+.contact-aside { gap: 14px; }
+.kontakt-direkte { background: var(--forest); color: #fff; }
+.kontakt-direkte h3 { color: #fff; }
+.kontakt-direkte .contact-line .k { color: rgba(255,255,255,.65); }
+.kontakt-direkte .contact-line .v { color: #fff; }
+.kontakt-direkte a.contact-line-link .v { color: #fff; font-size: 1.2rem; font-weight: 600; }
+.kontakt-direkte a.contact-line-link:hover .v { color: var(--moss-light); }
+.kontakt-videre { background: #ffd9c2; flex: 1; }
+.kontakt-videre .step-body { color: #4a4036; }
+.kontakt-videre .next-steps li::before { background: var(--forest); color: #fff; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .form-to { grid-template-columns: 1fr; } .kontakt-send { align-self: stretch; } }
+.kontakt-sek { padding-top: 14px; }
+.valg-rad label { position: relative; }
+.valg-rad input { left: 0; top: 0; width: 1px; height: 1px; margin: 0; }
+.contact-form .kontakt-send { align-self: flex-start; }
+@media (max-width: 560px) { .contact-form .kontakt-send { align-self: stretch; } }
