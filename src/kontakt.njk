@@ -56,12 +56,26 @@ permalink: /kontakt/
           <span class="v">Trøskenveien 36, 1712 Grålum</span>
         </a>
       </div>
-      <div class="kontakt-kart">
-        <iframe title="Kart som viser Trøskenveien 36, 1712 Grålum" src="https://maps.google.com/maps?q=Tr%C3%B8skenveien%2036%2C%201712%20Gr%C3%A5lum&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div class="kontakt-kart" id="kart" role="img" aria-label="Kart som viser Trøskenveien 36, 1712 Grålum"></div>
     </aside>
   </div>
 </section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  (function () {
+    if (!window.L) return;
+    var pos = [59.299351, 11.080185];
+    var kart = L.map('kart', { scrollWheelZoom: false, zoomControl: false, attributionControl: true }).setView(pos, 13);
+    L.control.zoom({ position: 'bottomright' }).addTo(kart);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(kart);
+    var nal = L.divIcon({ className: 'kart-nal', html: '<span></span>', iconSize: [28, 28], iconAnchor: [14, 14] });
+    L.marker(pos, { icon: nal, title: 'Oliva Park, Trøskenveien 36' }).addTo(kart);
+  })();
+</script>
 <script>
   (function () {
     var form = document.getElementById('contactForm');
