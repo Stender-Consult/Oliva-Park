@@ -2206,3 +2206,4 @@ nav.links a.nav-link::after { background: var(--orange); }
 .bento-a img { object-position: center 55%; }
 .sub-topp-bilde img[src*="fagarbeider-sjoutsikt"] { object-position: center 57%; }
 .bento-b img { object-position: center 38%; }
+.bento-c img { object-position: 45% 60%; }
