@@ -2207,3 +2207,6 @@ nav.links a.nav-link::after { background: var(--orange); }
 .sub-topp-bilde img[src*="fagarbeider-sjoutsikt"] { object-position: center 57%; }
 .bento-b img { object-position: center 38%; }
 .bento-c img { object-position: 45% 60%; }
+.footer-miljo { display: inline-block; margin-top: 22px; transition: opacity .2s; }
+.footer-miljo img { display: block; width: 190px; height: auto; }
+.footer-miljo:hover { opacity: .9; }
