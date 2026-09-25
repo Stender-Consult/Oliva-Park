@@ -7,7 +7,7 @@ kategori:
 sted: Oslo
 dato: 2026-07-01
 bilde: /images/barnehager-oslo-12.jpg
-beskrivelse: To kommunale barnehager i Oslo, liggende ved siden av hverandre, ferdigstilt sommeren 2026. Vi utførte grunnarbeider, utvendig betongarbeider og utenomhusarbeider.
+beskrivelse: Malerhaugveien 28 og Gladengveien 7 er to kommunale barnehager i Oslo som ligger ved siden av hverandre. Her utførte vi grunnarbeider, utvendige betongarbeider og utenomhusarbeider. Prosjektet ble ferdigstilt sommeren 2026.
 bilder:
   - /images/barnehager-oslo-1.jpg
   - /images/barnehager-oslo-2.jpg
