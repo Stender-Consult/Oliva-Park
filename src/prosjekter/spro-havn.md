@@ -3,11 +3,10 @@ layout: prosjekt.njk
 tittel: Spro Havn
 kategori:
   - Utenomhusarbeider
-  - Grunn- og VA-arbeider
 sted: Akershus
-dato: 2025-06-01
+dato: 2026-08-01
 bilde: /images/spro-havn-1.jpg
-beskrivelse: Uteområder for det nye boligområdet ved Spro Havn.
+beskrivelse: Spro Havn ligger på Nesodden, der vi har utført komplette utenomhusarbeider for et større leilighetsprosjekt i vakre omgivelser. Prosjektet ble ferdigstilt sommeren 2026.
 bilder:
   - /images/spro-havn-1.jpg
   - /images/spro-havn-2.jpg
