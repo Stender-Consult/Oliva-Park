@@ -2205,3 +2205,4 @@ nav.links a.nav-link::after { background: var(--orange); }
 .h-cta-bilde img { object-position: center 50%; }
 .bento-a img { object-position: center 55%; }
 .sub-topp-bilde img[src*="fagarbeider-sjoutsikt"] { object-position: center 57%; }
+.bento-b img { object-position: center 38%; }
